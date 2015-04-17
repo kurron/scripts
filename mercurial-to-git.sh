@@ -1,14 +1,13 @@
 #!/bin/bash
 
-SOURCE=hg-to-git
-TARGET=hg-to-git
+SOURCE=$1
+TARGET=$2
 mkdir $TARGET 
 
-for dir in */ 
+for dir in $SOURCE/* 
     do 
         echo converting $dir
-        hg clone $dir $TARGET
-        rm -rf $TARGET/$dir/.hg
-#       git init $TARGET/$dir
-#       cd $TARGET/dir ; git add --all ; cd -
+        cd $dir ; hg archive $TARGET/$dir ; cd -
+        git init $TARGET/$dir
+        cd $TARGET/dir ; git add --all ; git commit -a -m 'Import from Mercurial' ; cd -
     done
