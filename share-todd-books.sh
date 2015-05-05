@@ -22,7 +22,11 @@ rsync --verbose --recursive  --times --delete --prune-empty-dirs --human-readabl
 
 echo 'Sharing epub books...'
 #mkdir -p /cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/epub
-#rsync --verbose --recursive  --times --delete --prune-empty-dirs --human-readable --progress --include='*/' --include='*.epub' --exclude='*' '/cygdrive/g/Users/TLougee/Books/' '/cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/epub'
+mkdir -p /tmp/Todd/epub
+mkdir -p /tmp/ronbo/epub
+rsync --verbose --recursive  --times --delete --prune-empty-dirs --human-readable --progress --include='*/' --include='*.epub' --exclude='*' '/cygdrive/g/Users/TLougee/Books/' '/tmp/Todd/epub'
+find /tmp/Todd/epub -type f -name \*.epub -exec cp --verbose `basename {}` /tmp/ronbo/epub \;
+rsync --verbose --recursive  --times --delete --prune-empty-dirs --human-readable --progress --include='*/' --include='*.epub' --exclude='*' '/tmp/ronbo/epub/' '/cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/epub'
 
 echo 'Sharing mobi books...'
 #mkdir -p /cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/mobi
