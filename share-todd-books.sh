@@ -14,20 +14,24 @@ echo 'Rsyncing from G drive to ForMobile'
 
 echo 'Sharing PDF books...'
 #mkdir -p /cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/pdf
-rsync --verbose --recursive  --times --delete --prune-empty-dirs --human-readable --progress --include='*/' --include='*.pdf' --exclude='*' '/cygdrive/g/Users/TLougee/Books/' '/cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/pdf'
+mkdir -p /tmp/Todd/pdf
+mkdir -p /tmp/ronbo/pdf
+rsync --verbose --recursive  --times --delete --prune-empty-dirs --human-readable --progress --include='*/' --include='*.pdf' --exclude='*' '/cygdrive/g/Users/TLougee/Books/' '/tmp/Todd/pdf'
+find /tmp/Todd/pdf -type f -name \*.pdf -exec cp --verbose `basename {}` /tmp/ronbo/pdf \;
+rsync --verbose --recursive  --times --delete --prune-empty-dirs --human-readable --progress --include='*/' --include='*.pdf' --exclude='*' '/tmp/ronbo/pdf/' '/cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/pdf'
 
 echo 'Sharing epub books...'
 #mkdir -p /cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/epub
-rsync --verbose --recursive  --times --delete --prune-empty-dirs --human-readable --progress --include='*/' --include='*.epub' --exclude='*' '/cygdrive/g/Users/TLougee/Books/' '/cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/epub'
+#rsync --verbose --recursive  --times --delete --prune-empty-dirs --human-readable --progress --include='*/' --include='*.epub' --exclude='*' '/cygdrive/g/Users/TLougee/Books/' '/cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/epub'
 
 echo 'Sharing mobi books...'
 #mkdir -p /cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/mobi
-rsync --verbose --recursive  --times --delete --prune-empty-dirs --human-readable --progress --include='*/' --include='*.mobi' --exclude='*' '/cygdrive/g/Users/TLougee/Books/' '/cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/mobi'
+#rsync --verbose --recursive  --times --delete --prune-empty-dirs --human-readable --progress --include='*/' --include='*.mobi' --exclude='*' '/cygdrive/g/Users/TLougee/Books/' '/cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/mobi'
 
 echo 'Sharing archive files...'
 #mkdir -p /cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/zip
-rsync --verbose --recursive  --times --delete --prune-empty-dirs --human-readable --progress --include='*/' --include='*.zip' --include='*.rar' --exclude='*' '/cygdrive/g/Users/TLougee/Books/' '/cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/zip'
+#rsync --verbose --recursive  --times --delete --prune-empty-dirs --human-readable --progress --include='*/' --include='*.zip' --include='*.rar' --exclude='*' '/cygdrive/g/Users/TLougee/Books/' '/cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/zip'
 
 echo 'Sharing video files...'
 #mkdir -p /cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/video
-rsync --verbose --recursive  --times --delete --prune-empty-dirs --human-readable --progress --include='*/' --include='*.mp4' --exclude='*' '/cygdrive/g/Users/TLougee/Books/' '/cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/video'
+#rsync --verbose --recursive  --times --delete --prune-empty-dirs --human-readable --progress --include='*/' --include='*.mp4' --exclude='*' '/cygdrive/g/Users/TLougee/Books/' '/cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/video'
