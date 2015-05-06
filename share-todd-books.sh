@@ -31,7 +31,7 @@ rsync --verbose --recursive  --times --delete --prune-empty-dirs --human-readabl
 
 echo 'Sharing archive files...'
 mkdir -p /cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/zip
-rsync --verbose --recursive  --times --delete --prune-empty-dirs --human-readable --progress --include='*/' --include='*.zip' --include='*.rar' --exclude='*' '/cygdrive/g/Users/TLougee/Books/' '/cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/zip'
+#rsync --verbose --recursive  --times --delete --prune-empty-dirs --human-readable --progress --include='*/' --include='*.zip' --include='*.rar' --exclude='*' '/cygdrive/g/Users/TLougee/Books/' '/cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/zip'
 
 echo 'Sharing video files...'
 mkdir -p /cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/video
