@@ -30,7 +30,7 @@ find /tmp/Todd/mobi -type f -name \*.mobi -exec cp --verbose `basename {}` /tmp/
 rsync --verbose --recursive  --times --delete --prune-empty-dirs --human-readable --progress --include='*/' --include='*.mobi' --exclude='*' '/tmp/ronbo/mobi/' '/cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/mobi'
 
 echo 'Sharing archive files...'
-mkdir -p /cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/zip
+#mkdir -p /cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/zip
 #rsync --verbose --recursive  --times --delete --prune-empty-dirs --human-readable --progress --include='*/' --include='*.zip' --include='*.rar' --exclude='*' '/cygdrive/g/Users/TLougee/Books/' '/cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/zip'
 
 echo 'Sharing video files...'
