@@ -18,4 +18,4 @@
 #               SERVICE_1234_NAME: btsync
 #               SERVICE_8888_NAME: btsync-ui
 
-docker run --detach --name btsync --hostname btsync --restart always --net host --publish 1234:1234 --publish 8888:8888 --volumes-from btsync-data kurron/docker-bittorrent-sync 
+docker run --detach --name btsync --hostname btsync --restart always --net bridge --publish 1234:1234 --publish 8888:8888 --volumes-from btsync-data kurron/docker-bittorrent-sync
