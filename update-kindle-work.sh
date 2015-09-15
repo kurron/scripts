@@ -1,6 +1,7 @@
 #!/bin/bash
 
-FROM=/cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/mobi/
+#FROM=/cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/mobi/
+FROM=/cygdrive/i/BitTorrenSync/Todd/mobi/
 TO=/cygdrive/e/documents/transparent-language
 
 echo 'Copying mobi books...'
