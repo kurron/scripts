@@ -1,6 +1,7 @@
 #!/bin/bash
 
 FROM=/cygdrive/c/cygwin64/home/RKurr/BitTorrentSync/Todd/
+FROM=/cygdrive/i/BitTorrenSync/Todd/
 
 # find ./dir1 -type f -exec basename {} \;
 
