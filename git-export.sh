@@ -4,4 +4,4 @@
 BRANCH_TO_EXPORT=$1
 DESTINATION=$2
 mkdir -p $DESTINATION
-git archive $BRANCH_TO_EXPORT | tar -x -C $DESTINATION 
+git archive $BRANCH_TO_EXPORT | tar --extract --directory $DESTINATION
