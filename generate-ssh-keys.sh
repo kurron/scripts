@@ -8,4 +8,6 @@ fi
 
 COMMENT=$1
 
-ssh-keygen -C "$COMMENT" -t rsa
+mkdir .ssh
+ssh-keygen -C "$COMMENT" -t rsa -f .ssh/id_rsa
+chmod 0700 .ssh
