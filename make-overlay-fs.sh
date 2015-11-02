@@ -11,8 +11,8 @@ sudo fdisk /dev/sdb
 
 # create the new file system -- will warn that you are doing an entire device and not a partition
 #sudo mkfs -t ext4 -N <number_of_inodes> /dev/sdb
-#sudo mkfs -t ext4 -T small /dev/sdb
-sudo /sbin/mkfs.xfs /dev/sdb1
+sudo mkfs -t ext4 -T small /dev/sdb1 
+#sudo /sbin/mkfs.xfs /dev/sdb1
 
 # create the new mount point
 #sudo mkdir /var/lib/docker/overlay
