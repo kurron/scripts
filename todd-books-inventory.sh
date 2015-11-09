@@ -15,7 +15,8 @@ echo 'Generating pdf inventory...'
 find $FROM -type f -name \*.pdf -exec basename {} \; | sort > books-pdf.txt
 
 echo 'Generating mp4 inventory...'
-find $FROM -type f -name \*.mp4 -exec basename {} \; | sort > books-mp4.txt
+#find $FROM -type f -name \*.mp4 -exec basename {} \; | sort > books-mp4.txt
+find $FROM/video/ -type d | sort > books-mp4.txt
 
 echo 'Generating zip inventory...'
 find $FROM -type f -name \*.zip -exec basename {} \; | sort > books-zip.txt
