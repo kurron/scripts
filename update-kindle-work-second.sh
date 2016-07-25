@@ -6,7 +6,7 @@
 FROM=/cygdrive/d/BitTorrent\ Sync/Apps/
 TO=/cygdrive/e/documents/transparent-language
 
-CMD="rsync --verbose --recursive --checksum --delete --prune-empty-dirs --human-readable --progress --itemize-changes --include='*/' --include='[H-Zh-z]*.mobi' --exclude='*' '$FROM' '$TO'"
+CMD="rsync --verbose --recursive --checksum --delete --prune-empty-dirs --human-readable --progress --itemize-changes --exclude='Packet Publishing/' --exclude='Free and Not Updated O?Reilly Books/' --include='*/' --include='[M-Zm-z]*.mobi' --exclude='*' '$FROM' '$TO'"
 
 echo eval $CMD
 eval $CMD
