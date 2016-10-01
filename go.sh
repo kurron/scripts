@@ -19,6 +19,11 @@ echo $COUNT
 HALF=$((COUNT/2))
 echo $HALF
 
-FIND_THREE="find ${TO} -type f -name '*.epub' | sort | limit "
-echo eval ${FIND_TWO}
+FIND_THREE="find ${TO} -type f -name '*.epub' | sort | head --lines ${HALF}"
+echo eval ${FIND_THREE}
+eval ${FIND_THREE}
+
+FIND_FOUR="find ${TO} -type f -name '*.epub' | sort | tail --lines ${HALF}"
+echo eval ${FIND_FOUR}
+eval ${FIND_FOUR}
 
