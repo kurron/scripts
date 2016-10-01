@@ -2,6 +2,8 @@
 
 FROM="/cygdrive/d/BitTorrent\ Sync/Apps/"
 TO=/tmp/ronbo
+FIRST_HALF=$TO/first
+LAST_HALF=$TO/last
 
 #rm -rf ${TO}
 #mkdir -p ${TO}
@@ -19,11 +21,15 @@ echo $COUNT
 HALF=$((COUNT/2))
 echo $HALF
 
-FIND_THREE="find ${TO} -type f -name '*.epub' | sort | head --lines ${HALF}"
-echo eval ${FIND_THREE}
-eval ${FIND_THREE}
+rm -rf ${FIRST_HALF}
+mkdir -p ${FIRST_HALF}
 
-FIND_FOUR="find ${TO} -type f -name '*.epub' | sort | tail --lines ${HALF}"
-echo eval ${FIND_FOUR}
-eval ${FIND_FOUR}
+# copy the first half to its folder
+find ${TO} -type f -name '*.epub' | sort | head --lines ${HALF} | sed 's/.*/"&"/' | xargs cp --verbose  --target-directory ${FIRST_HALF}
 
+
+rm -rf ${LAST_HALF}
+mkdir -p ${LAST_HALF}
+
+# copy the last half to its folder
+find ${TO} -type f -name '*.epub' | sort | tail --lines ${HALF} | sed 's/.*/"&"/' | xargs cp --verbose  --target-directory ${LAST_HALF}
