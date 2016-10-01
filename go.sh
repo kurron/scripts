@@ -5,13 +5,15 @@ TO=/tmp/ronbo
 FIRST_HALF=$TO/first
 LAST_HALF=$TO/last
 
-#rm -rf ${TO}
-#mkdir -p ${TO}
+rm -rf ${TO}
+mkdir -p ${TO}
 
+# copy the epub files into a folder
 FIND_ONE="find ${FROM} -type f -name '*.epub' -exec cp --verbose {} ${TO} \;"
 #echo eval ${FIND_ONE}
-#eval ${FIND_ONE}
+eval ${FIND_ONE}
 
+# figure out how many files we are dealing with
 FIND_TWO="find ${TO} -type f -name '*.epub' | wc -l"
 echo eval ${FIND_TWO}
 
