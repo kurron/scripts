@@ -7,6 +7,6 @@
 FROM=/tmp/separated/first
 TO=/cygdrive/e/documents/transparent-language
 
-CMD="rsync --verbose --recursive --checksum --delete --prune-empty-dirs --human-readable --progress --itemize-changes --include='*/' '$FROM' '$TO'"
+CMD="rsync --verbose --recursive --checksum --delete --prune-empty-dirs --human-readable --progress --itemize-changes --include='*/' --exclude='*IllustratedGuidetoAstronomicalWonders*' --exclude='*HeadFirstPhysics*' '$FROM' '$TO'"
 echo eval $CMD
 eval $CMD

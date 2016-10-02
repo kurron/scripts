@@ -4,7 +4,7 @@
 #FROM=/cygdrive/i/BitTorrenSync/Todd/mobi/
 #FROM=/cygdrive/i/BitTorrenSync/Todd\ Books/Apps/
 #FROM=/cygdrive/d/BitTorrent\ Sync/Apps/
-FROM=/tmp/separated/middle/
+FROM=/tmp/separated/last/
 TO=/cygdrive/e/documents/transparent-language
 
 CMD="rsync --verbose --recursive --checksum --delete --prune-empty-dirs --human-readable --progress --itemize-changes --include='*/' '$FROM' '$TO'"
