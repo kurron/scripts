@@ -2,19 +2,19 @@
 - name: Run all the roles
   hosts: remote
   roles:
-    - "Atlassian"
-    - "AWS"
-    - "C++ Developer" 
-    - "Docker Host" 
-    - "DSL Developer" 
-    - "Hashicorp" 
-    - "JavaScript Developer" 
-    - "JVM Developer" 
-    - "Operations" 
-    - "PHP Developer" 
-    - "Python Developer" 
-    - "Ruby Developer" 
-    - "Software Developer" 
-    - "SQL Developer" 
-    - "VirtualBox" 
+  - kurron.atlassian
+  - kurron.aws
+  - kurron.cpp-developer
+  - kurron.docker-host
+  - kurron.dsl-developer
+  - kurron.hashicorp
+  - kurron.javascript-developer
+  - kurron.jvm-developer
+  - kurron.operations
+  - kurron.php-developer
+  - kurron.python-developer
+  - kurron.ruby-developer
+  - kurron.software-developer
+  - kurron.sql-developer
+  - kurron.virtualbox
 
