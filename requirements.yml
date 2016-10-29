@@ -1,0 +1,55 @@
+# This is used to manage Ansible role dependences
+# http://docs.ansible.com/galaxy.html#installing-multiple-roles-from-a-file
+# Install with: `ansible-galaxy install -r requirements.yml`
+
+- name: Atlassian 
+  src: kurron.jvm-developer
+
+- name: AWS
+  src: kurron.aws
+
+- name: Base
+  src: kurron.base
+
+- name: C++ Developer
+  src: kurron.cpp-developer
+
+- name: Docker Host 
+  src: kurron.docker-host
+
+- name: DSL Developer 
+  src: kurron.dsl-developer
+
+- name: Hashicorp 
+  src: kurron.hashicorp
+
+- name: JavaScript Developer 
+  src: kurron.javascript-developer
+
+- name: JDK 
+  src: kurron.jdk
+
+- name: JVM Developer 
+  src: kurron.jvm-developer
+
+- name: Operations
+  src: kurron.operations
+
+- name: PHP Developer
+  src: kurron.php-developer
+
+- name: Python Developer
+  src: kurron.python-developer
+
+- name: Ruby Developer
+  src: kurron.ruby-developer
+
+- name: Software Developer
+  src: kurron.software-developer
+
+- name: SQL Developer
+  src: kurron.sql-developer
+
+- name: VirtualBox 
+  src: kurron.virtualbox
+
