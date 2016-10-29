@@ -1,5 +1,5 @@
 ---
 - hosts: localhost
   roles:
-  - role: kurron.virtualbox 
+  - role: kurron.hashicorp 
 
