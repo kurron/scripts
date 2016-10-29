@@ -3,7 +3,7 @@
 # Install with: `ansible-galaxy install -r requirements.yml`
 
 - name: Atlassian 
-  src: kurron.jvm-developer
+  src: kurron.atlassian
 
 - name: AWS
   src: kurron.aws
