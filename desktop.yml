@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  roles:
+      - role: kurron.hashicorp
+      - role: kurron.resilio-sync
+      - role: kurron.virtualbox
+
