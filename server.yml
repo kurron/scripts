@@ -12,3 +12,29 @@
       - role: kurron.plex
       - role: kurron.resilio-sync
 
+- name: Mount NAS 
+  hosts: all
+  become: True
+  tasks:
+      - lineinfile:
+            dest: /etc/hosts
+            line: "{{ item }}"
+        with_items:
+          - '192.168.1.222 batcave'
+          - '192.168.1.227 stargate'
+          - '192.168.1.229 atlantis'
+          - '192.168.1.233 bifrost'
+          - '192.168.1.234 nas'
+          - '192.168.1.236 openvpn'
+      - file:
+          path: "/mnt/nas"
+          state: directory
+      - apt:
+          name: nfs-common
+          state: present
+      - mount:
+          name: "/mnt/nas"
+          src: "nas:/media"
+          fstype: nfs
+          opts: ro
+          state: mounted
