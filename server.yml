@@ -1,0 +1,14 @@
+---
+- hosts: all
+  roles:
+      - role: kurron.docker-host
+      - role: kurron.hashicorp
+      - {
+            role: kurron.operations,
+            operations_loggly_token: "{{ lookup('env','LOGGLY_TOKEN') }}",
+            operations_loggly_tag: "basement",
+            operations_datadog_api_key: "{{ lookup('env','DATADOG_TOKEN') }}"
+        }
+      - role: kurron.plex
+      - role: kurron.resilio-sync
+

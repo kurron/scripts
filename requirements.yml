@@ -14,6 +14,7 @@
 - src: kurron.jvm-developer
 - src: kurron.operations
 - src: kurron.php-developer
+- src: kurron.plex
 - src: kurron.python-developer
 - src: kurron.resilio-sync
 - src: kurron.ruby-developer
