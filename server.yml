@@ -11,8 +11,9 @@
         }
       - role: kurron.plex
       - role: kurron.resilio-sync
+      - role: kurron.rsync
 
-- name: Mount NAS 
+- name: Mount NAS
   hosts: all
   become: True
   tasks:

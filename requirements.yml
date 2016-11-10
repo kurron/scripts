@@ -17,6 +17,7 @@
 - src: kurron.plex
 - src: kurron.python-developer
 - src: kurron.resilio-sync
+- src: kurron.rsync
 - src: kurron.ruby-developer
 - src: kurron.software-developer
 - src: kurron.sql-developer
