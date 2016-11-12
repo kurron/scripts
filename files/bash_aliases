@@ -1,0 +1,5 @@
+# custom bash settings
+
+# use vi key bindings
+set -o vi
+
