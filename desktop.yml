@@ -6,15 +6,27 @@
       - role: kurron.resilio-sync
       - role: kurron.virtualbox
 
-- name: Install Required Packages
+- name: Install Desired Packages
   hosts: localhost
   become: yes
   tasks:
-     - package:
-           name: "{{item}}"
-           state: present
-       with_items:
-       - "tree"
+      - dnf:
+          name: "http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-24.noarch.rpm"
+          state: present
+      - dnf:
+            name: "{{item}}"
+            state: present
+        with_items:
+        - "tree"
+        - "gnome-tweak-tool"
+        - "vlc"
+        - "gimp"
+        - "youtube-dl"
+        - "unzip"
+        - "qbittorrent"
+        - "pidgin"
+        - "python3-dropbox"
+        - "gnome-music"
 
 - name: Mount NAS
   hosts: localhost
