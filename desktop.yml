@@ -16,3 +16,28 @@
        with_items:
        - "tree"
 
+- name: Mount NAS
+  hosts: localhost
+  become: yes
+  tasks:
+      - lineinfile:
+            dest: /etc/hosts
+            line: "{{ item }}"
+        with_items:
+          - '192.168.1.227 stargate'
+          - '192.168.1.229 atlantis'
+          - '192.168.1.233 bifrost'
+          - '192.168.1.234 nas'
+          - '192.168.1.236 openvpn'
+      - file:
+          path: "/mnt/nas"
+          state: directory
+      - dnf:
+          name: nfs-utils
+          state: present
+      - mount:
+          name: "/mnt/nas"
+          src: "nas:/media"
+          fstype: nfs
+          opts: ro
+          state: mounted
