@@ -13,6 +13,14 @@
       - role: kurron.resilio-sync
       - role: kurron.rsync
 
+- name: Install Required Packages
+  become: yes
+  package:
+      name: "{{item}}"
+      state: present
+  with_items:
+  - "tree"
+
 - name: Mount NAS
   hosts: all
   become: True
