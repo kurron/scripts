@@ -13,6 +13,10 @@
       - role: kurron.resilio-sync
       - role: kurron.rsync
 
+- hosts: bifrost
+  roles:
+      - role: kurron.virtualbox
+
 - name: Install Required Packages
   hosts: all
   become: yes
