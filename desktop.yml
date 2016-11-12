@@ -25,8 +25,9 @@
         - "unzip"
         - "qbittorrent"
         - "pidgin"
-        - "python3-dropbox"
         - "gnome-music"
+        - "filezilla"
+        - "grsync"
 
 - name: Mount NAS
   hosts: localhost
