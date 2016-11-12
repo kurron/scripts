@@ -62,3 +62,6 @@
       - copy:
             src: files/bash_aliases
             dest: "{{ansible_user_dir}}/.bash_aliases"
+      - copy:
+            src: files/gitconfig
+            dest: "{{ansible_user_dir}}/.gitconfig"
