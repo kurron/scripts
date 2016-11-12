@@ -15,11 +15,12 @@
 
 - name: Install Required Packages
   become: yes
-  package:
-      name: "{{item}}"
-      state: present
-  with_items:
-  - "tree"
+  tasks:
+      - package:
+            name: "{{item}}"
+            state: present
+        with_items:
+        - "tree"
 
 - name: Mount NAS
   hosts: all
