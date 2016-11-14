@@ -13,7 +13,7 @@
       - role: kurron.resilio-sync
       - role: kurron.rsync
 
-- hosts: bifrost
+- hosts: bifrost,vanaheim
   roles:
       - role: kurron.virtualbox
 
@@ -46,6 +46,8 @@
           - '192.168.1.233 bifrost'
           - '192.168.1.234 nas'
           - '192.168.1.236 openvpn'
+          - '192.168.1.240 vanaheim'
+          - '192.168.1.250 asgard'
       - file:
           path: "/mnt/nas"
           state: directory

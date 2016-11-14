@@ -1,2 +1,4 @@
 bifrost ansible_ssh_host=192.168.1.233 ansible_ssh_port=22
 stargate ansible_ssh_host=192.168.1.227 ansible_ssh_port=22
+vanaheim ansible_ssh_host=192.168.1.240 ansible_ssh_port=22
+asgard ansible_ssh_host=192.168.1.250 ansible_ssh_port=22
