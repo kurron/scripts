@@ -12,10 +12,12 @@
 - src: kurron.javascript-developer
 - src: kurron.jdk
 - src: kurron.jvm-developer
+- src: kurron.mysql
 - src: kurron.operations
 - src: kurron.php-developer
 - src: kurron.plex
 - src: kurron.python-developer
+- src: kurron.rabbitmq
 - src: kurron.resilio-sync
 - src: kurron.rsync
 - src: kurron.ruby-developer
