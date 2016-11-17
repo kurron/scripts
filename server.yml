@@ -61,6 +61,23 @@
           opts: ro
           state: mounted
 
+- name: Mount NAS
+  hosts: stargate,atlantis
+  become: True
+  tasks:
+      - file:
+          path: "/mnt/sync"
+          state: directory
+      - apt:
+          name: nfs-common
+          state: present
+      - mount:
+          name: "/mnt/sync"
+          src: "nas:/{{ansible_hostname}}-sync"
+          fstype: nfs
+          opts: rw
+          state: mounted
+
 - name: Environmental Tweaks
   hosts: all
   become: No
