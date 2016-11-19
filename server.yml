@@ -87,11 +87,14 @@
       - file:
           path: "/mnt/ext005"
           state: directory
+      - apt:
+          name: ntfs-3g
+          state: present
       - mount:
           name: "/mnt/ext005"
           src: UUID=5C28F67528F64D90
           fstype: ntfs
-          opts: rw
+          opts: rw,uid=rkurr,gid=rkurr
           state: mounted
 
 - name: Environmental Tweaks
