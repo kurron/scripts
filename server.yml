@@ -78,6 +78,22 @@
           opts: rw
           state: mounted
 
+- name: Mount External USB Drive
+  hosts: atlantis
+  become: True
+  tags:
+      - backup
+  tasks:
+      - file:
+          path: "/mnt/ext005"
+          state: directory
+      - mount:
+          name: "/mnt/ext005"
+          src: UUID=5C28F67528F64D90
+          fstype: ntfs
+          opts: rw
+          state: mounted
+
 - name: Environmental Tweaks
   hosts: all
   become: No
