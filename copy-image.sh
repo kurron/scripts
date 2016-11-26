@@ -2,7 +2,7 @@
 
 
 # sudo dnf install dcfldd
-# xz --test --list ubuntu-16.04-preinstalled-server-armhf+raspi2.img.xz
+# xz --verbose --test --list --decompress ubuntu-16.04-preinstalled-server-armhf+raspi2.img.xz
 
 if [ "$1" = "" ]
 then
