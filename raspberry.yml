@@ -9,7 +9,7 @@
             operations_sysdig_install: false
         }
 
-- name: Host Entries 
+- name: Odds and Ends
   hosts: all
   become: True
   tasks:
@@ -26,4 +26,8 @@
           - '192.168.1.236 midgard'
           - '192.168.1.240 vanaheim'
           - '192.168.1.250 asgard'
-
+      - cron:
+            name: loggly-check
+            job: "logger 'Still alive!'"
+            special_time: hourly
+            state: present
