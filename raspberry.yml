@@ -1,0 +1,29 @@
+---
+- hosts: all
+  roles:
+      - {
+            role: kurron.operations,
+            operations_loggly_token: "{{ lookup('env','LOGGLY_TOKEN') }}",
+            operations_loggly_tag: "basement",
+            operations_datadog_install: false,
+            operations_sysdig_install: false
+        }
+
+- name: Host Entries 
+  hosts: all
+  become: True
+  tasks:
+      - lineinfile:
+            dest: /etc/hosts
+            line: "{{ item }}"
+        with_items:
+          - '192.168.1.222 batcave'
+          - '192.168.1.227 stargate'
+          - '192.168.1.229 atlantis'
+          - '192.168.1.233 bifrost'
+          - '192.168.1.234 nas'
+          - '192.168.1.235 alfheim'
+          - '192.168.1.236 openvpn'
+          - '192.168.1.240 vanaheim'
+          - '192.168.1.250 asgard'
+
