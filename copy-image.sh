@@ -2,6 +2,7 @@
 
 
 # sudo dnf install dcfldd
+# xz --test --list ubuntu-16.04-preinstalled-server-armhf+raspi2.img.xz
 
 if [ "$1" = "" ]
 then
@@ -22,3 +23,4 @@ CMD="sudo dcfldd bs=4M if=$SOURCE of=$DESTINATION"
 echo $CMD
 $CMD
 
+sudo sync
