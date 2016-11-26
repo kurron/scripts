@@ -108,3 +108,13 @@
       - copy:
             src: files/gitconfig
             dest: "{{ansible_user_dir}}/.gitconfig"
+
+- name: Odds and Ends
+  hosts: all
+  become: True
+  tasks:
+      - cron:
+            name: loggly-check
+            job: "logger 'Still alive!'"
+            special_time: hourly
+            state: present
