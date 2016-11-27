@@ -5,6 +5,7 @@
 - src: kurron.atlassian
 - src: kurron.aws
 - src: kurron.base
+- src: kurron.block-device
 - src: kurron.cpp-developer
 - src: kurron.docker-host
 - src: kurron.dsl-developer
@@ -12,6 +13,8 @@
 - src: kurron.javascript-developer
 - src: kurron.jdk
 - src: kurron.jvm-developer
+- src: kurron.logfaces
+- src: kurron.mongodb
 - src: kurron.mysql
 - src: kurron.operations
 - src: kurron.php-developer
@@ -24,5 +27,4 @@
 - src: kurron.software-developer
 - src: kurron.sql-developer
 - src: kurron.virtualbox
-- src: kurron.logfaces
 
