@@ -2,6 +2,7 @@
 # http://docs.ansible.com/galaxy.html#installing-multiple-roles-from-a-file
 # Install with: `ansible-galaxy install -r requirements.yml`
 
+- src: kurron.artifactory
 - src: kurron.atlassian
 - src: kurron.aws
 - src: kurron.base

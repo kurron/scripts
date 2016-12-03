@@ -11,7 +11,7 @@
   become: yes
   tasks:
       - dnf:
-          name: "http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-24.noarch.rpm"
+          name: "http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-25.noarch.rpm"
           state: present
       - dnf:
             name: "{{item}}"
@@ -21,8 +21,10 @@
         - "gnome-tweak-tool"
         - "vlc"
         - "gimp"
+        - "simple-scan"
         - "youtube-dl"
         - "unzip"
+        - "thunderbird"
         - "qbittorrent"
         - "pidgin"
         - "gnome-music"
