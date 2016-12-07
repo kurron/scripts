@@ -1,0 +1,1 @@
+ec2 ansible_ssh_host=35.165.182.9 ansible_ssh_port=22 ansible_ssh_private_key_file=/home/vagrant/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
