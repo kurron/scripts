@@ -22,6 +22,7 @@
 - src: kurron.plex
 - src: kurron.python-developer
 - src: kurron.rabbitmq
+- src: kurron.redis
 - src: kurron.resilio-sync
 - src: kurron.rsync
 - src: kurron.ruby-developer
