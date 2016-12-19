@@ -13,7 +13,7 @@
       - role: kurron.resilio-sync
       - role: kurron.rsync
 
-- hosts: bifrost,vanaheim
+- hosts: bifrost,vanaheim,asgard
   roles:
       - role: kurron.virtualbox
 
