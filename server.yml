@@ -1,21 +1,22 @@
 ---
 - hosts: all
   roles:
-      - role: kurron.docker-host
-      - role: kurron.hashicorp
+      - { role: kurron.docker-host, tags: ["docker"] }
+      - { role: kurron.hashicorp, tags: ["hashicorp"] }
       - {
             role: kurron.operations,
+            tags: ["operations"],
             operations_loggly_token: "{{ lookup('env','LOGGLY_TOKEN') }}",
             operations_loggly_tag: "basement",
             operations_datadog_api_key: "{{ lookup('env','DATADOG_TOKEN') }}"
         }
-      - role: kurron.plex
-      - role: kurron.resilio-sync
-      - role: kurron.rsync
+      - { role: kurron.plex, tags: ["plex"] }
+      - { role: kurron.resilio-sync, tags: ["resilio"] }
+      - { role: kurron.rsync, tags: ["rsync"] }
 
 - hosts: bifrost,vanaheim,asgard
   roles:
-      - role: kurron.virtualbox
+      - { role: kurron.virtualbox, tags: ["virtualbox"] }
 
 - name: Install Required Packages
   hosts: all
