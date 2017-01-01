@@ -1,0 +1,7 @@
+---
+- hosts: all
+  gather_facts: yes
+
+  roles:
+      - { role: kurron.elastic-stack, elastic_filebeat_install: true, elastic_filebeat_elasticsearch_host: 35.161.126.133 }
+
