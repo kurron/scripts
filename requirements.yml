@@ -29,5 +29,6 @@
 - src: kurron.ruby-developer
 - src: kurron.software-developer
 - src: kurron.sql-developer
+- src: kurron.transparent-huge-pages
 - src: kurron.virtualbox
 
