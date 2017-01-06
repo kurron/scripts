@@ -1,13 +1,13 @@
 #!/bin/bash
 
 echo 'Sharing PDF books...'
-mkdir -p /cygdrive/i/BitTorrenSync/Todd/pdf
+mkdir -p /cygdrive/d/Todd/pdf
 mkdir -p /tmp/Todd/pdf
 rm -rf /tmp/ronbo/pdf
 mkdir -p /tmp/ronbo/pdf
 rsync --verbose --recursive  --times --checksum --delete --prune-empty-dirs --human-readable --progress --include='*/' --include='*.pdf' --exclude='*' '/cygdrive/g/Users/TLougee/Books/Packet Publishing/' '/tmp/Todd/pdf'
 find /tmp/Todd/pdf -type f -name \*.pdf -exec cp --verbose $(basename {}) /tmp/ronbo/pdf \;
-rsync --verbose --checksum --recursive  --times --delete --prune-empty-dirs --human-readable --progress --include='*/' --include='*.pdf' --exclude='*' '/tmp/ronbo/pdf/' '/cygdrive/i/BitTorrenSync/Todd/pdf'
+rsync --verbose --checksum --recursive  --times --delete --prune-empty-dirs --human-readable --progress --include='*/' --include='*.pdf' --exclude='*' '/tmp/ronbo/pdf/' '/cygdrive/d/Todd/pdf'
 
 echo 'Sharing epub books...'
 mkdir -p /cygdrive/i/BitTorrenSync/Todd/epub
