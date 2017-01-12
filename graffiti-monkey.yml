@@ -1,0 +1,19 @@
+---
+_instance_tags_to_propagate:
+#   - 'Name'
+    - 'Purpose'
+    - 'Project'
+    - 'Creator'
+    - 'Environment'
+    - 'Freetext'
+
+_volume_tags_to_propagate:
+#   - 'Name'
+    - 'instance_id'
+    - 'device'
+    - 'Purpose'
+    - 'Project'
+    - 'Creator'
+    - 'Environment'
+    - 'Freetext'
+
