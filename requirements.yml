@@ -18,6 +18,7 @@
 - src: kurron.logfaces
 - src: kurron.mongodb
 - src: kurron.mysql
+- src: kurron.node-js
 - src: kurron.operations
 - src: kurron.php-developer
 - src: kurron.plex
