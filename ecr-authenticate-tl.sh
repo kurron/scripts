@@ -1,6 +1,8 @@
 #!/bin/bash
 
-RAW=$(aws ecr get-login --region us-east-1)
+# IMPORTANT: requires that you have run aws configure --profile tl-registry to create a new profile with correct keys
+
+RAW=$(aws ecr get-login --profile tl-registry)
 echo ${RAW}
 
 echo 
