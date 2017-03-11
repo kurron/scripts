@@ -1,0 +1,1 @@
+/poll create for 7 days "Can the Oracle JDK be removed from the Vagrant boxes?" "Absolutely. Don't risk the lawsuits." "No way!  We have stuff that needs it." "What's a JDK?"
