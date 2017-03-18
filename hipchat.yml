@@ -1,0 +1,15 @@
+---
+- name: Send Test Message 
+  hosts: localhost
+  become: False
+  tasks:
+      - hipchat:
+            api: https://api.hipchat.com/v1/
+            color: random
+            from: Ansible
+            msg: '<emp>Sent</emp> from <strong>Ansible</strong>. This is code: <code>def i = 21</code>.'
+            msg_format: html
+            notify: no
+            token: 127348e63893df04400eff1d574459
+            room: 'Nashua JVM'
+            validate_certs: yes
