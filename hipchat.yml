@@ -6,8 +6,33 @@
       - hipchat:
             api: https://api.hipchat.com/v1/
             color: random
-            from: Ansible
-            msg: '<emp>Sent</emp> from <strong>Ansible</strong>. This is code: <code>def i = 21</code>.'
+            from: Deadpool
+            msg: |
+                 <emp>Sent</emp> from <strong>Ansible</strong>. This is code: <code>def i = 21</code>.
+                 <ul>
+                     <li>Item One
+                     <li>Item Two
+                     <li>Item Three
+                 </ul>
+
+                 <table style="width:100%">
+                     <tr>
+                         <th>Firstname</th>
+                         <th>Lastname</th>
+                         <th>Age</th>
+                     </tr>
+                     <tr>
+                         <td>Jill</td>
+                         <td>Smith</td>
+                         <td>50</td>
+                     </tr>
+                     <tr>
+                         <td>Eve</td>
+                         <td>Jackson</td>
+                         <td>94</td>
+                     </tr>
+                 </table>
+                 <img src="https://s-media-cache-ak0.pinimg.com/736x/fc/7f/46/fc7f46f7d303637101c1ff7378e35aec.jpg">
             msg_format: html
             notify: no
             token: 127348e63893df04400eff1d574459
