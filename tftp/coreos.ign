@@ -1,14 +1,26 @@
-# This config is meant to be consumed by the config transpiler, which will
-# generate the corresponding Ignition config. Do not pass this config directly
-# to instances of Container Linux.
-
-systemd:
-  units:
-    - name: etcd2.service
-      enable: true
-
-passwd:
-  users:
-    - name: core
-      ssh_authorized_keys:
-        - ssh-rsa AAAAB3NzaC1kc3MAAACBAJGRtN2bfOzOt2UuJW0MsQzHCaZiaIoqKGdqXqXr8jyLAI2eT7yG/l6wxyVtmlP0HYHSptdl2ce0J/K4k3CxE6MENHHAtb3ta2Ggp+qSkYOF+wruHaLBeyQ7tMX9in8I41IqaBRzPlVSFCCdbs8jtvi0Rq61BxUEadY60Am3lYRhAAAAFQCCAd6jZeJORFHTu2LgeqN56hnWaQAAAIBXHm0a0CKvzYo3B9BLkDZyDFAV64xmyLQ1SL6Rq2nwgKWp8HZizUfaHF/NDXf3OYs3fQBzG5nn5w94AZQbBSPBXelA1T01cGXef4xMo02TbUkvqxjYHPlR5f9Lw/+ypF2MfLaXeGUm4N7TJ3H/rfYNo3elY3hGrjIoUfQEp9VEtwAAAIARmc0dDoZrn7N6rPmHmPvJJjM+gjFnO809qlqbv0AP/PL0VLbgLZYBJz6J+GJ0I/7CY4tP7Zk22FW9DGH2ENlAhnQFzMnLC4T9ms/PTIt8e2OErYcifvlG4YHfQ0bzhClOEpRNqLGgkN8tDO+DolVbOo3qwfBDLbYNIO6XuDC15g==
+{
+  "ignition": {
+    "version": "2.0.0",
+    "config": {}
+  },
+  "storage": {},
+  "systemd": {
+    "units": [
+      {
+        "name": "etcd2.service",
+        "enable": true
+      }
+    ]
+  },
+  "networkd": {},
+  "passwd": {
+    "users": [
+      {
+        "name": "core",
+        "sshAuthorizedKeys": [
+          "ssh-rsa AAAAB3NzaC1kc3MAAACBAJGRtN2bfOzOt2UuJW0MsQzHCaZiaIoqKGdqXqXr8jyLAI2eT7yG/l6wxyVtmlP0HYHSptdl2ce0J/K4k3CxE6MENHHAtb3ta2Ggp+qSkYOF+wruHaLBeyQ7tMX9in8I41IqaBRzPlVSFCCdbs8jtvi0Rq61BxUEadY60Am3lYRhAAAAFQCCAd6jZeJORFHTu2LgeqN56hnWaQAAAIBXHm0a0CKvzYo3B9BLkDZyDFAV64xmyLQ1SL6Rq2nwgKWp8HZizUfaHF/NDXf3OYs3fQBzG5nn5w94AZQbBSPBXelA1T01cGXef4xMo02TbUkvqxjYHPlR5f9Lw/+ypF2MfLaXeGUm4N7TJ3H/rfYNo3elY3hGrjIoUfQEp9VEtwAAAIARmc0dDoZrn7N6rPmHmPvJJjM+gjFnO809qlqbv0AP/PL0VLbgLZYBJz6J+GJ0I/7CY4tP7Zk22FW9DGH2ENlAhnQFzMnLC4T9ms/PTIt8e2OErYcifvlG4YHfQ0bzhClOEpRNqLGgkN8tDO+DolVbOo3qwfBDLbYNIO6XuDC15g=="
+        ]
+      }
+    ]
+  }
+}
