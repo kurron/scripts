@@ -1,0 +1,46 @@
+{
+  "ignition": {
+    "version": "2.0.0",
+    "config": {}
+  },
+  "storage": {
+    "files": [{
+      "filesystem": "root",
+      "path": "/etc/hostname",
+      "mode": 420,
+      "contents": { "source": "data:,etcd" }
+    }]
+  },
+  "systemd": {
+    "units": [
+      {
+        "name": "etcd2.service",
+        "enable": true,
+        "dropins": [
+            {
+                "name": "metadata.conf",
+                "contents": "[Unit]\nRequires=coreos-metadata.service\nAfter=coreos-metadata.service\n\n[Service]\nEnvironmentFile=/run/metadata/coreos\nExecStart=\nExecStart=/usr/bin/etcd2 --advertise-client-urls=http://${COREOS_IPV4_PUBLIC}:2379 --initial-advertise-peer-urls=http://${COREOS_IPV4_LOCAL}:2380 --listen-client-urls=http://0.0.0.0:2379 --listen-peer-urls=http://${COREOS_IPV4_LOCAL}:2380 --initial-cluster=${ETCD_NAME}=http://${COREOS_IPV4_LOCAL}:2380"
+            }
+        ] 
+      }
+    ]
+  },
+  "networkd": {
+    "units": [
+      {
+        "name": "00-eth0.network",
+        "contents": "[Match]\nName=eth0\n\n[Network]\nDNS=8.8.8.8\nAddress=192.168.1.252/24\nGateway=192.168.1.1" 
+      }
+    ]
+  },
+  "passwd": {
+    "users": [
+      {
+        "name": "core",
+        "sshAuthorizedKeys": [
+          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2g0jR5gtA2elgrMrAEp7d4QvxBpTrl2EiP98heuP+9nx03Ii+E5Q0c3p5zeeiVh+aYkNiWnAgkc37o+3bgWcWtMBokvA1Q3LQPoEoa6XaffvTHSODpm89+AFEL0IReqQneNIsOHLZLhi/LanXOL1njb8tRrEJJMlW5sIKVE8eqDyhKju8Lw0TSqWYdz2g7T3eJmgW4JPnlmXXv0vMh/Go88VHTxC2kd/RsfrWGgPFbeSZAnvebxi31CIhKjgarP525zs7JMAsgC191k5+NXn2UUmDDhLuhV+xi4fOIQc3CacuGZ7Rg3Lx6Njf32+hGZc6LSm4VCM7IZeMu2m9m9Hf rkurr@batcave"
+        ]
+      }
+    ]
+  }
+}
