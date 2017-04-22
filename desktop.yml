@@ -3,7 +3,7 @@
   roles:
       - { role: kurron.hashicorp, tags: [ 'hashicorp' ] }
       - role: kurron.software-developer
-      - role: kurron.resilio-sync
+#     - role: kurron.resilio-sync
       - role: kurron.virtualbox
 
 - name: Install Desired Packages
@@ -13,9 +13,11 @@
       - dnf:
           name: "http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-25.noarch.rpm"
           state: present
+          when: ansible_distribution == 'Fedora'
       - dnf:
             name: "{{item}}"
             state: present
+            when: ansible_distribution == 'Fedora'
         with_items:
         - "tree"
         - "gnome-tweak-tool"
@@ -30,6 +32,31 @@
         - "gnome-music"
         - "filezilla"
         - "grsync"
+        - "nfs-utils"
+
+- name: Install Desired Packages
+  hosts: localhost
+  become: yes
+  tasks:
+      - apt:
+            name: "{{item}}"
+            state: present
+            when: ansible_distribution == 'Ubuntu'
+        with_items:
+        - "tree"
+        - "gnome-tweak-tool"
+        - "vlc"
+        - "gimp"
+        - "simple-scan"
+        - "youtube-dl"
+        - "unzip"
+        - "thunderbird"
+        - "qbittorrent"
+        - "pidgin"
+        - "gnome-music"
+        - "filezilla"
+        - "grsync"
+        - "nfs-common"
 
 - name: Mount NAS
   hosts: localhost
@@ -50,9 +77,6 @@
       - file:
           path: "/mnt/nas"
           state: directory
-      - dnf:
-          name: nfs-utils
-          state: present
       - mount:
           name: "/mnt/nas"
           src: "nas:/media"
