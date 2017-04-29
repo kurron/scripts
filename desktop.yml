@@ -5,20 +5,20 @@
       - role: kurron.atlassian
       - role: kurron.software-developer
 #     - role: kurron.resilio-sync
-      - role: kurron.virtualbox
+#     - role: kurron.virtualbox
 
 - name: Install Desired Packages
   hosts: localhost
   become: yes
   tasks:
       - dnf:
-          name: "http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-25.noarch.rpm"
-          state: present
-          when: ansible_distribution == 'Fedora'
+            name: "http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-25.noarch.rpm"
+            state: present
+        when: ansible_distribution == 'Fedora'
       - dnf:
             name: "{{item}}"
             state: present
-            when: ansible_distribution == 'Fedora'
+        when: ansible_distribution == 'Fedora'
         with_items:
         - "tree"
         - "gnome-tweak-tool"
@@ -42,7 +42,7 @@
       - apt:
             name: "{{item}}"
             state: present
-            when: ansible_distribution == 'Ubuntu'
+        when: ansible_distribution == 'Ubuntu'
         with_items:
         - "tree"
         - "gnome-tweak-tool"
