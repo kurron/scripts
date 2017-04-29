@@ -2,6 +2,7 @@
 - hosts: localhost
   roles:
       - { role: kurron.hashicorp, tags: [ 'hashicorp' ] }
+      - { role: kurron.operations, operations_loggly_install: false, operations_datadog_install: false }
       - role: kurron.atlassian
       - role: kurron.software-developer
 #     - role: kurron.resilio-sync
