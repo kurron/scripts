@@ -15,6 +15,7 @@
 - src: kurron.javascript-developer
 - src: kurron.jdk
 - src: kurron.jvm-developer
+- src: kurron.jvpn
 - src: kurron.logfaces
 - src: kurron.logstash
 - src: kurron.mongodb
