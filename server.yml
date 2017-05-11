@@ -21,7 +21,7 @@
             operations_datadog_api_key: "{{ lookup('env','DATADOG_TOKEN') }}"
         }
       - { role: kurron.plex, tags: ["plex"] }
-      - { role: kurron.resilio-sync, tags: ["resilio"] }
+#     - { role: kurron.resilio-sync, tags: ["resilio"] }
       - { role: kurron.rsync, tags: ["rsync"] }
 
 - hosts: bifrost,vanaheim,asgard
@@ -58,6 +58,7 @@
           - '192.168.1.234 nas'
           - '192.168.1.235 alfheim'
           - '192.168.1.236 midgard'
+          - '192.168.1.237 jotunheim'
           - '192.168.1.240 vanaheim'
           - '192.168.1.250 asgard'
       - file:
