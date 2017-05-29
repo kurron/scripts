@@ -14,4 +14,5 @@ done
 
 sudo mkdir /home/shared-folder
 sudo chown -R luke:starwars /home/shared-folder
+sudo g+w /home/shared-folder
 ls -l --all --human /home
