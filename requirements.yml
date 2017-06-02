@@ -9,6 +9,7 @@
 - src: kurron.block-device
 - src: kurron.cpp-developer
 - src: kurron.docker-host
+- src: kurron.docker-keep-alive
 - src: kurron.dsl-developer
 - src: kurron.elastic-stack
 - src: kurron.hashicorp
