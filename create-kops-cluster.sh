@@ -6,6 +6,7 @@ export KOPS_STATE_STORE=s3://kops-transparent-education-state-store
 export REGION=us-west-2
 export ZONES=us-west-2a,us-west-2b,us-west-2c
 export NODE_SIZE=m4.large
+export MASTER_SIZE=m3.large
 export SSH_KEY=/home/vagrant/.ssh/kops.pub
 export CIDR=10.10.0.0/16
 
@@ -17,7 +18,7 @@ CMD="kops create cluster \
     --cloud=aws \
     --cloud-labels="Project=KOPS,Purpose=Experimentation,Creator=rkurr@transparent.com,Environment=development,Freetext=None" \
     --dns-zone=${DNS_ZONE} \
-    --master-size=${NODE_SIZE} \
+    --master-size=${MASTER_SIZE} \
     --master-zones=${ZONES} \
     --network-cidr=${CIDR} \
     --networking=weave \
