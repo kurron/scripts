@@ -8,7 +8,7 @@ export ZONES=us-west-2a,us-west-2b,us-west-2c
 export NODE_SIZE=m4.large
 export MASTER_SIZE=m3.large
 export SSH_KEY=/home/vagrant/.ssh/kops.pub
-export CIDR=10.10.0.0/16
+export CIDR=10.100.0.0/16
 
 # if you need to know what AZ are available
 #aws ec2 describe-availability-zones --region ${REGION} 
