@@ -16,3 +16,6 @@
 
 curl --header "x-api-key:9k2SjhNE6Z7FCccX9b9sr8n2KK08YfHq8GmBukHO" https://debug.transparent.engineering/alpha/api/anything
 #curl --verbose --header "x-api-key:9k2SjhNE6Z7FCccX9b9sr8n2KK08YfHq8GmBukHO" https://86b6zepim4.execute-api.us-west-2.amazonaws.com/released/api/anything
+
+# production AGW
+curl --header "x-api-key:YukEHOK7BEAIo1w6SdIb9XOlVJBviKl7A8UIv3L9" https://govapi.transparent.com/production/slurp-e-api/
