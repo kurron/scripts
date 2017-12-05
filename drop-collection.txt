@@ -1,0 +1,2 @@
+# MongoDB equivalent of purging a table 
+db.collection.remove( {} )
