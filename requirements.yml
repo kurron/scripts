@@ -10,8 +10,10 @@
 - src: kurron.cpp-developer
 - src: kurron.docker-host
 - src: kurron.docker-keep-alive
+- src: kurron.dot-net-developer
 - src: kurron.dsl-developer
 - src: kurron.elastic-stack
+- src: kurron.go-developer
 - src: kurron.hashicorp
 - src: kurron.javascript-developer
 - src: kurron.jdk
@@ -37,4 +39,5 @@
 - src: kurron.time
 - src: kurron.transparent-huge-pages
 - src: kurron.virtualbox
+- src: kurron.vpc
 
