@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  roles:
+      - role: kurron.php-developer
+      - role: kurron.dot-net-developer
+      - role: kurron.go-developer
+      - role: kurron.cpp-developer
+      - role: kurron.ruby-developer
+      - role: kurron.dsl-developer
+
