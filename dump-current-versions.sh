@@ -32,6 +32,9 @@ echo "* Upgraded: Docker Machine ${MACHINE}"
 AWS=$(aws --version)
 echo "* Upgraded: AWS CLI ${AWS}"
 
+ECS=$(ecs-cli --version)
+echo "* Upgraded: AWS ECS CLI ${ECS}"
+
 KUBE=$(kubectl version)
 echo "* Upgraded: Kubectl ${KUBE}"
 
