@@ -17,5 +17,11 @@
 curl --header "x-api-key:9k2SjhNE6Z7FCccX9b9sr8n2KK08YfHq8GmBukHO" https://debug.transparent.engineering/alpha/api/anything
 #curl --verbose --header "x-api-key:9k2SjhNE6Z7FCccX9b9sr8n2KK08YfHq8GmBukHO" https://86b6zepim4.execute-api.us-west-2.amazonaws.com/released/api/anything
 
+# trigger archive job in development
+curl --request POST --header "x-api-key:CHs9qbXE9naZIeQynhJPA1ejzbshJpGr8LLwJfcz" https://government.transparent.engineering/development/slurp-e-archiver/launch
+
+# check on the archive job status in development
+curl --request GET --header "x-api-key:CHs9qbXE9naZIeQynhJPA1ejzbshJpGr8LLwJfcz" https://government.transparent.engineering/development/slurp-e-archiver/status/1
+
 # production AGW
 curl --header "x-api-key:YukEHOK7BEAIo1w6SdIb9XOlVJBviKl7A8UIv3L9" https://govapi.transparent.com/production/slurp-e-api/
