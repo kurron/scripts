@@ -87,7 +87,7 @@ GRUNT=$(grunt --version)
 echo "* Upgraded: Grunt ${GRUNT}"
 
 SERVERLESS=$(serverless --version)
-echo "* Upgraded: Servless ${SERVERLESS}"
+echo "* Upgraded: Serverless ${SERVERLESS}"
 
 echo "* Upgraded: IntelliJ IDEA 0"
 echo "* Upgraded: PyCharm 0"
