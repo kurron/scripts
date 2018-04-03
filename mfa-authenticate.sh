@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-# This script will generate temporary API keys based on your MFA device, altering your AWS default profile.
-# WARNING: this is the worst script ever and will continue to append to the AWS config files!
+# This script will generate temporary API keys based on your MFA device.
 
 if [ "$1" = "" ]
 then
@@ -38,9 +37,13 @@ region = ${REGION}
 source-profile = mfa
 END
 
-echo "$CREDENTIALS" >> ~/.aws/credentials
-echo "$CONFIG" >> ~/.aws/config
+# we no longer want/need to adjust the profiles
+#echo "$CREDENTIALS" >> ~/.aws/credentials
+#echo "$CONFIG" >> ~/.aws/config
 
+echo "export AWS_ACCESS_KEY_ID=${ID}" > /tmp/mfa.sh
+echo "export AWS_SECRET_ACCESS_KEY=${KEY}" >> /tmp/mfa.sh
+echo "export AWS_SESSION_TOKEN=${TOKEN}" >> /tmp/mfa.sh
 echo
-echo "The default AWS profile has been altered to allow CLI access until ${EXPIRATION}."
+echo "Run source /tmp/mfa.sh to authorize your CLI commands"
 echo
