@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-# This script will generate temporary API keys based on your MFA device.
+# This script will generate temporary API keys based on your MFA device, altering your AWS default profile.
+# WARNING: this is the worst script ever and will continue to append to the AWS config files!
 
 if [ "$1" = "" ]
 then
@@ -10,6 +11,7 @@ fi
 
 MFA_CODE=${1}
 MFA_DEVICE_ARN=${2:-arn:aws:iam::022776788690:mfa/rkurr}
+REGION=${3:-us-west-2}
 
 CMD="aws sts get-session-token --serial-number ${MFA_DEVICE_ARN} --token-code ${MFA_CODE}"
 echo ${CMD}
@@ -22,12 +24,23 @@ ID=$(echo "${JSON}" | jq --compact-output --raw-output '.Credentials.AccessKeyId
 EXPIRATION=$(echo "${JSON}" | jq --compact-output --raw-output '.Credentials.Expiration')
 TOKEN=$(echo "${JSON}" | jq --compact-output --raw-output '.Credentials.SessionToken')
 
-export AWS_ACCESS_KEY=${ID}
-export AWS_SECRET_ACCESS_KEY=${KEY}
-export AWS_SESSION_TOKEN=${TOKEN}
+read -r -d '' CREDENTIALS <<END
+[mfa]
+aws_access_key_id = ${ID}
+aws_secret_access_key = ${KEY}
+aws_session_token = ${TOKEN}
+END
 
-echo AWS_ACCESS_KEY=${AWS_ACCESS_KEY}
-echo AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-echo AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
+read -r -d '' CONFIG <<END
+[profile mfa]
+output = json
+region = ${REGION}
+source-profile = mfa
+END
+
+echo "$CREDENTIALS" >> ~/.aws/credentials
+echo "$CONFIG" >> ~/.aws/config
+
 echo
-echo "CLI access will be available until ${EXPIRATION}.  Appropriate environment variables have been exported."
+echo "The default AWS profile has been altered to allow CLI access until ${EXPIRATION}."
+echo
