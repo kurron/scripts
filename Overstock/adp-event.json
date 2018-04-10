@@ -1,0 +1,18 @@
+{ 
+    "chnl": "some-chnl",
+    "eid": "some-eid",
+    "aid": "some-aid",
+    "pos": "some-position",
+    "sid": "some-side",
+    "etype": "some-etyp",
+    "uid": "some-uid",
+    "tid": "some-tid",
+    "edate": "some-edate",
+    "chnltype": "some-chnltype",
+    "viewable": "some-viewable",
+    "elm_id": "some-elm_id",
+    "etime": "some-etime",
+    "heid": "some-heid",
+    "foo": "bar"
+}
+
