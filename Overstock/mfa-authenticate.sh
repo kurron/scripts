@@ -11,8 +11,9 @@ fi
 MFA_CODE=${1}
 MFA_DEVICE_ARN=${2:-arn:aws:iam::022776788690:mfa/rkurr}
 REGION=${3:-us-west-2}
+PROFILE=${4:-overstock}
 
-CMD="aws sts get-session-token --serial-number ${MFA_DEVICE_ARN} --token-code ${MFA_CODE}"
+CMD="aws --profile ${PROFILE} sts get-session-token --serial-number ${MFA_DEVICE_ARN} --token-code ${MFA_CODE}"
 echo ${CMD}
 JSON=$(${CMD})
 #JSON='{ "Credentials": { "SecretAccessKey": "qaEycXg9vYqvThJlfrem6F+rqKPxz0SYYTfA88tP", "SessionToken": "FQoDYXdzEEoaDFdX9vrK0209ofsEGCKwAeKl7E5+i0a3fhL82MAlFy5+n/uhIJoQs3mPwi3kVVXPK5ONTp8dDJlmLyyPiCAfQ7CfrtfygUqWuTpzNQ9erEk6W5RBVUJogyiR7uMET6kwhZCqW7cZAHcuHdiy6e7CAKEQVTom7LtFGtnYaRTvuIUDa7jRD4ZIWJyz+SJ+7ZZPp4f4MuUQfeZyi61QUc3mhqVtxn5lxsMCvNIPhY6CgeW0tHv+yHqBOuHsbTNzz5PLKLPgjtYF", "Expiration": "2018-04-04T04:47:47Z", "AccessKeyId": "ASIAJNL3VAFXPVPITBEA" } }'
