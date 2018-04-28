@@ -1,0 +1,20 @@
+{ 
+    "eid": "some-eid",
+    "chnl": "some-chnl",
+    "chnltype": "some-chnltype",
+    "etype": "some-etype",
+    "aid": "some-aid",
+    "uid": "some-uid",
+    "heid": "some-heid",
+    "sid": "some-side",
+    "pos": 1234,
+    "viewable": true,
+    "elmid": "some-elmid",
+    "tid": "some-tid",
+    "from": "viewable is boolean",
+    "ua": "this should not be set",
+    "wife": "Tara",
+    "daughter": "Devan",
+    "son": "Logan"
+}
+
