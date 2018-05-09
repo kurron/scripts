@@ -8,7 +8,6 @@
 
 DATA_DIRECTORY=${1:-$HOME/Neo4J/data}
 ENVIRONMENT_FILE=${2:-neo4j-environment.properties}
-RAM_HARD=${3:-536870912}
 
 USER_ID=$(id -u $(whoami))
 GROUP_ID=$(id -g $(whoami))
@@ -21,7 +20,6 @@ ${MKDIR}
 CMD="docker run --detach \
                 --env-file ${ENVIRONMENT_FILE} \
                 --hostname neo4j \
-                --memory ${RAM_HARD} \
                 --name neo4j \
                 --network host \
                 --restart always \
