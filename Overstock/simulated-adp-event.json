@@ -1,5 +1,6 @@
 { 
     "body": {
+        "rid": "some-rid",
         "eid": "some-eid",
         "chnl": "some-chnl",
         "chnltype": "some-chnltype",
@@ -13,7 +14,7 @@
         "elmid": "5678",
         "tid": "some-tid",
         "ua": "some-ua",
-        "ip": "some-ip",
+        "ip": "0.0.0.0",
         "from": "viewable is boolean",
         "wife": "Tara",
         "daughter": "Devan",

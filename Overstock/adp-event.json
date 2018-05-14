@@ -1,4 +1,5 @@
 { 
+    "rid": "some-rid",
     "eid": "some-eid",
     "chnl": "some-chnl",
     "chnltype": "some-chnltype",
