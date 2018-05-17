@@ -18,5 +18,5 @@ docker exec -it some-scylla cqlsh -e 'DESC SCHEMA;'
 
 docker pull docker.elastic.co/kibana/kibana-oss:6.2.4
 docker run --name kibana-test --hostname kibana -p 5601:5601 -d -e "ELASTICSEARCH_URL=http://172.17.0.1:9200/" docker.elastic.co/kibana/kibana-oss:6.2.4 
-docker logs --follow kibana-test
+#docker logs --follow kibana-test
 
