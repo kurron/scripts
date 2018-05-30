@@ -45,7 +45,7 @@ SYSDIG=$(sysdig --version)
 echo "* Upgraded: Sysdig ${SYSDIG}"
 
 FALCO=$(falco --version)
-echo "* Upgraded: Faco ${FALCO}"
+echo "* Upgraded: Falco ${FALCO}"
 
 CONSUL=$(consul --version)
 echo "* Upgraded: Consul ${CONSUL}"
