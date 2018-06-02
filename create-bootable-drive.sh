@@ -14,3 +14,5 @@ DESTINATION=${2:-zero}
 CMD="sudo ddrescue --odirect --verbose --force ${SOURCE} /dev/${DESTINATION}"
 echo ${CMD}
 ${CMD}
+
+sudo sync
