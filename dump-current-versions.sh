@@ -38,6 +38,9 @@ echo "* Upgraded: AWS ECS CLI ${ECS}"
 KUBE=$(kubectl version)
 echo "* Upgraded: Kubectl ${KUBE}"
 
+HELM="do it by hand"
+echo "* Upgraded: Helm ${HELM}"
+
 LOCALSTACK=$(localstack --version)
 echo "* Upgraded: localstack ${LOCALSTACK}"
 
