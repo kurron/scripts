@@ -20,3 +20,5 @@ docker pull docker.elastic.co/kibana/kibana-oss:6.2.4
 docker run --name kibana-test --hostname kibana -p 5601:5601 -d -e "ELASTICSEARCH_URL=http://172.17.0.1:9200/" docker.elastic.co/kibana/kibana-oss:6.2.4 
 #docker logs --follow kibana-test
 
+docker pull neo4j:3.3.5
+docker run --name neo4j --hostname neo4j -p 7474:7474 -p 7473:7473 -p 7687:7687 -d -e "NEO4J_AUTH=none" neo4j:3.3.5
