@@ -5,7 +5,8 @@
 
    # Ansible requires python2, which is not installed by default on Ubuntu Xenial
   pre_tasks:
-     - raw: sudo apt-get -y install python-simplejson
+#    - raw: sudo apt-get -y install python-simplejson
+     - raw: sudo apt-get -y install software-properties-common python
      # action: setup will gather facts after python2 has been installed
      - action: setup
 
@@ -20,11 +21,12 @@
             operations_loggly_tag: "basement",
             operations_datadog_api_key: "{{ lookup('env','DATADOG_TOKEN') }}"
         }
-      - { role: kurron.plex, tags: ["plex"] }
+#     - { role: kurron.plex, tags: ["plex"] }
 #     - { role: kurron.resilio-sync, tags: ["resilio"] }
       - { role: kurron.rsync, tags: ["rsync"] }
 
-- hosts: bifrost,vanaheim,asgard
+#- hosts: bifrost,vanaheim,asgard
+- hosts: vanaheim,asgard
   roles:
       - { role: kurron.virtualbox, tags: ["virtualbox"] }
 
@@ -56,8 +58,8 @@
           - '192.168.1.229 atlantis'
           - '192.168.1.233 bifrost'
           - '192.168.1.234 nas'
-          - '192.168.1.235 alfheim'
-          - '192.168.1.236 midgard'
+          - '192.168.1.235 pi-a'
+          - '192.168.1.236 pi-m'
           - '192.168.1.237 jotunheim'
           - '192.168.1.240 vanaheim'
           - '192.168.1.250 asgard'
