@@ -77,7 +77,8 @@
           state: mounted
 
 - name: Mount NAS
-  hosts: stargate,atlantis
+# hosts: stargate,atlantis,bifrost
+  hosts: none
   become: True
   tasks:
       - file:
@@ -94,7 +95,7 @@
           state: mounted
 
 - name: Mount External USB Drive
-  hosts: atlantis
+  hosts: bifrost
   become: True
   tags:
       - backup
@@ -124,7 +125,8 @@
             dest: "{{ansible_user_dir}}/.gitconfig"
 
 - name: Odds and Ends
-  hosts: all
+# hosts: all
+  hosts: none
   become: True
   tasks:
       - cron:
