@@ -11,7 +11,7 @@ fi
 MFA_CODE=${1}
 MFA_DEVICE_ARN=${2:-arn:aws:iam::022776788690:mfa/rkurr}
 REGION=${3:-us-west-2}
-PROFILE=${4:-overstock}
+PROFILE=${4:-marketing}
 
 CMD="aws --profile ${PROFILE} sts get-session-token --serial-number ${MFA_DEVICE_ARN} --token-code ${MFA_CODE}"
 echo ${CMD}
