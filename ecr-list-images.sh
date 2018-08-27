@@ -1,7 +1,8 @@
 #!/bin/bash
 
-REPOSITORY=${1:-slurp-e/api-server}
+REPOSITORY=${1:-adpimageconversion}
+PROFILE=${2:-orfeo-production}
 
-CMD="aws --profile tl-registry --region us-east-1 ecr list-images --repository-name ${REPOSITORY}"
+CMD="aws --profile ${PROFILE} --region us-east-1 ecr list-images --repository-name ${REPOSITORY}"
 echo ${CMD}
 ${CMD}
