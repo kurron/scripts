@@ -3,7 +3,7 @@
 clear
 
 #ASSET=${1:-cd89c4d4193a3fd4c0b6d74fb26ae2a5.jpeg}
-ASSET=${1:-240x160/REMOTEaHR0cHM6Ly9jb20tb3ZlcnN0b2NrLWFkcC1hc3NldHMtc3RhZ2luZy5zMy51cy1lYXN0LTIuYW1hem9uYXdzLmNvbS9mYWQyN2Q1N2EwODIwZDdmMjVlODMwZTRmYTAxYjYxZS5qcGVn.jpeg}
+ASSET=${1:-69x69/REMOTEaHR0cHM6Ly9jb20tb3ZlcnN0b2NrLWFkcC1hc3NldHMtc3RhZ2luZy5zMy51cy1lYXN0LTIuYW1hem9uYXdzLmNvbS8zZTljZTdiOTljMDc0Y2MzOWI0NjI5MjBlY2EyZDRmMS5qcGVn.jpeg}
 #ASSET=${1:-100x102/blue-marble.jpg}
 
 HTTP="http --verbose --follow --all --print Hh --max-redirects=5 "
@@ -26,8 +26,8 @@ echo
 
 echo Access via direct CDN URL
 CDN="https://d3l5e03zbw9ed4.cloudfront.net/${ASSET}"
-#CHARLIE="${HTTP} ${CDN}"
-CHARLIE="${HTTP_NO_FOLLOW} ${CDN}"
+CHARLIE="${HTTP} ${CDN}"
+#CHARLIE="${HTTP_NO_FOLLOW} ${CDN}"
 echo ${CHARLIE}
 ${CHARLIE}
 echo
