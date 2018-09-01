@@ -9,67 +9,55 @@ echo "* Upgraded: JDK 0"
 echo "* Upgraded: SDKMAN! 0"
 
 PYTHON=$(python3 --version)
-echo "* Upgraded: Python ${PYTHON}"
+echo "* Upgraded: ${PYTHON}"
 
 PYTHON_LEGACY=$(python --version)
-echo "* Upgraded: Legacy Python ${PYTHON_LEGACY}"
-
-PYTHON_EDGE=$(python3.6 --version)
-echo "* Upgraded: Edge Python ${PYTHON_EDGE}"
+echo "* Upgraded: Legacy ${PYTHON_LEGACY}"
 
 VIRTUALENV=$(virtualenv --version)
 echo "* Upgraded: Virtualenv ${VIRTUALENV}"
 
 DOCKER=$(docker --version)
-echo "* Upgraded: Docker ${DOCKER}"
+echo "* Upgraded: ${DOCKER}"
 
 COMPOSE=$(docker-compose --version)
-echo "* Upgraded: Docker Compose ${COMPOSE}"
+echo "* Upgraded: ${COMPOSE}"
 
 MACHINE=$(docker-machine --version)
-echo "* Upgraded: Docker Machine ${MACHINE}"
+echo "* Upgraded: ${MACHINE}"
 
 AWS=$(aws --version)
-echo "* Upgraded: AWS CLI ${AWS}"
+echo "* Upgraded: ${AWS}"
 
 ECS=$(ecs-cli --version)
-echo "* Upgraded: AWS ECS CLI ${ECS}"
+echo "* Upgraded: AWS ${ECS}"
 
-KUBE=$(kubectl version)
+KUBE=$(kubectl version --short=true --client=true)
 echo "* Upgraded: Kubectl ${KUBE}"
 
-HELM="do it by hand"
+HELM="$(helm version --client --short)"
 echo "* Upgraded: Helm ${HELM}"
 
 LOCALSTACK=$(localstack --version)
 echo "* Upgraded: localstack ${LOCALSTACK}"
 
 SYSDIG=$(sysdig --version)
-echo "* Upgraded: Sysdig ${SYSDIG}"
+echo "* Upgraded: ${SYSDIG}"
 
 FALCO=$(falco --version)
-echo "* Upgraded: Falco ${FALCO}"
-
-CONSUL=$(consul --version)
-echo "* Upgraded: Consul ${CONSUL}"
-
-CONSUL_REPLICATE=$(consul-replicate --version)
-echo "* Upgraded: Consul Replicate ${CONSUL_REPLICATE}"
-
-CONSUL_TEMPLATE=$(consul-template --version)
-echo "* Upgraded: Consul Template ${CONSUL_TEMPLATE}"
+echo "* Upgraded: ${FALCO}"
 
 NOMAD=$(nomad --version)
-echo "* Upgraded: Nomad ${NOMAD}"
+echo "* Upgraded: ${NOMAD}"
 
 PACKER=$(packer --version)
 echo "* Upgraded: Packer ${PACKER}"
 
 TERRAFORM=$(terraform --version)
-echo "* Upgraded: Terraform ${TERRAFORM}"
+echo "* Upgraded: ${TERRAFORM}"
 
 VAULT=$(vault --version)
-echo "* Upgraded: Vault ${VAULT}"
+echo "* Upgraded: ${VAULT}"
 
 NODE=$(node --version)
 echo "* Upgraded: NodeJS ${NODE}"
@@ -94,7 +82,5 @@ echo "* Upgraded: Serverless ${SERVERLESS}"
 
 echo "* Upgraded: IntelliJ IDEA 0"
 echo "* Upgraded: PyCharm 0"
-echo "* Upgraded: Charles Proxy 0"
-echo "* Upgraded: Atom 0"
-echo "* Upgraded: Visual Studio Code 0"
-echo "* Upgraded: MongoDB Compass 0"
+echo "* Upgraded: Support for VirtualBox 0"
+echo "* Upgraded: Support for VMWare Fusion 0"
