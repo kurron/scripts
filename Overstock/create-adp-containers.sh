@@ -21,4 +21,7 @@ docker run --name kibana-test --hostname kibana -p 5601:5601 -d -e "ELASTICSEARC
 #docker logs --follow kibana-test
 
 docker pull neo4j:3.3.5
-docker run --name neo4j --hostname neo4j -p 7474:7474 -p 7473:7473 -p 7687:7687 -d -e "NEO4J_AUTH=none" neo4j:3.3.5
+#docker run --name neo4j --hostname neo4j -p 7474:7474 -p 7473:7473 -p 7687:7687 -d -e "NEO4J_AUTH=none" neo4j:3.3.5
+
+docker pull localstack/localstack:latest
+docker run --name localstack --hostname localstack -p 4569:4569 -d -e "SERVICES=dynamodb" localstack/localstack:latest
