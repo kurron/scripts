@@ -24,4 +24,7 @@ docker pull neo4j:3.3.5
 #docker run --name neo4j --hostname neo4j -p 7474:7474 -p 7473:7473 -p 7687:7687 -d -e "NEO4J_AUTH=none" neo4j:3.3.5
 
 docker pull localstack/localstack:latest
-docker run --name localstack --hostname localstack -p 4569:4569 -d -e "SERVICES=dynamodb" localstack/localstack:latest
+#docker run --name localstack --hostname localstack -p 4569:4569 -d -e "SERVICES=dynamodb" localstack/localstack:latest
+
+docker pull amazon/dynamodb-local:latest
+#docker run --name dynamodb --hostname dynamodb --net host docker pull amazon/dynamodb-local:latest -inMemory -port 4569
