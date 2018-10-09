@@ -4,7 +4,7 @@ R=${RANDOM}
 B=$((RANDOM%2))
 CMD="http --verify no \
 	  --json POST \
-          https://nkkmfsfq10.execute-api.us-west-1.amazonaws.com/adpevents/ chnl=${R} \
+          https://staging-adp-events.orfeo.io/staging chnl=${R} \
 	                                                                    eid=${R} \
 									    aid=${R} \
 									    pos=${R} \
