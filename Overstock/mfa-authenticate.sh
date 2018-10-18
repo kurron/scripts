@@ -45,6 +45,11 @@ END
 echo "export AWS_ACCESS_KEY_ID=${ID}" > /tmp/mfa.sh
 echo "export AWS_SECRET_ACCESS_KEY=${KEY}" >> /tmp/mfa.sh
 echo "export AWS_SESSION_TOKEN=${TOKEN}" >> /tmp/mfa.sh
+echo >> /tmp/mfa.sh
+echo "export TF_VAR_master_aws_region=\"us-east-1\"" >> /tmp/mfa.sh
+echo "export TF_VAR_master_aws_access_key=\"${ID}\"" >> /tmp/mfa.sh
+echo "export TF_VAR_master_aws_secret_key=\"${KEY}\"" >> /tmp/mfa.sh
+echo "export TF_VAR_master_aws_session_token=\"${TOKEN}\"" >> /tmp/mfa.sh
 echo
 echo "Run source /tmp/mfa.sh to authorize your CLI commands"
 echo
