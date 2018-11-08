@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# This script will generate temporary API keys based on your MFA device. Intended to be used by a Terraform environment.
+# This script will generate temporary API keys based on your MFA device.
 
 if [ "$1" = "" ]
 then
@@ -24,10 +24,27 @@ ID=$(echo "${JSON}" | jq --compact-output --raw-output '.Credentials.AccessKeyId
 EXPIRATION=$(echo "${JSON}" | jq --compact-output --raw-output '.Credentials.Expiration')
 TOKEN=$(echo "${JSON}" | jq --compact-output --raw-output '.Credentials.SessionToken')
 
-echo "export TF_VAR_master_aws_region=\"us-east-1\"" > /tmp/mfa.sh
-echo "export TF_VAR_master_aws_access_key=\"${ID}\"" >> /tmp/mfa.sh
-echo "export TF_VAR_master_aws_secret_key=\"${KEY}\"" >> /tmp/mfa.sh
-echo "export TF_VAR_master_aws_session_token=\"${TOKEN}\"" >> /tmp/mfa.sh
+read -r -d '' CREDENTIALS <<END
+[mfa]
+aws_access_key_id = ${ID}
+aws_secret_access_key = ${KEY}
+aws_session_token = ${TOKEN}
+END
+
+read -r -d '' CONFIG <<END
+[profile mfa]
+output = json
+region = ${REGION}
+source-profile = mfa
+END
+
+# we no longer want/need to adjust the profiles
+#echo "$CREDENTIALS" >> ~/.aws/credentials
+#echo "$CONFIG" >> ~/.aws/config
+
+echo "export AWS_ACCESS_KEY_ID=${ID}" > /tmp/mfa.sh
+echo "export AWS_SECRET_ACCESS_KEY=${KEY}" >> /tmp/mfa.sh
+echo "export AWS_SESSION_TOKEN=${TOKEN}" >> /tmp/mfa.sh
 echo
 echo "Run source /tmp/mfa.sh to authorize your CLI commands"
 echo
