@@ -24,7 +24,14 @@ docker pull neo4j:3.3.5
 #docker run --name neo4j --hostname neo4j -p 7474:7474 -p 7473:7473 -p 7687:7687 -d -e "NEO4J_AUTH=none" neo4j:3.3.5
 
 docker pull localstack/localstack:latest
-#docker run --name localstack --hostname localstack -p 4569:4569 -d -e "SERVICES=dynamodb" localstack/localstack:latest
+docker run --name localstack --hostname localstack --net host -d -e "SERVICES=dynamodb,sqs,kinesis" -e "DEFAULT_REGION=us-west-2" localstack/localstack:latest
+
+# create SQS queues via awslocal
+awslocal sqs create-queue --queue-name adp-feed-ingest-request-development
+awslocal sqs create-queue --queue-name adp-silonet-request-development
+awslocal sqs create-queue --queue-name adp-supplier-ingestion-request-development
+awslocal sqs create-queue --queue-name adp-webdam-notifications-development
+awslocal sqs create-queue --queue-name asset-ingestion-development
 
 docker pull amazon/dynamodb-local:latest
 #docker run --name dynamodb --hostname dynamodb --net host docker pull amazon/dynamodb-local:latest -inMemory -port 4569
