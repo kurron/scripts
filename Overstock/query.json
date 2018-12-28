@@ -1,0 +1,26 @@
+{
+  "expression_groups": [
+    {
+      "expressions": [
+        {
+          "field": "references.product",
+          "value": "12015208",
+          "comparison_operator": "EQ"
+        },
+        {
+          "field": "references.image_width",
+          "value": "800",
+          "comparison_operator": "GTE",
+          "logical_operator": "AND"
+        },
+        {
+          "field": "asset_state",
+          "value": "active",
+          "comparison_operator": "EQ",
+          "logical_operator": "AND"
+        }
+      ]
+    }
+  ]
+}
+
