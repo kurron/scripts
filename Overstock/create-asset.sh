@@ -2,8 +2,20 @@
 
 # expecs that an SSH tunnel to the private load balancer has already been started
 
-BODY=${1:-asset-create.json}
+PORT=${1:-8080}
+IMAGE=${2:-https://www.sideshowtoy.com/assets/products/903341-iron-man-mark-iv/lg/marvel-iron-man-2-iron-man-mark-4-sixth-scale-figure-hot-toys-903340-01.jpg}
+SOURCE_ID=$(date +%s)
 
-CURL="curl --verbose --header Content-Type:application/json --header Accept:application/json --request POST --data @${BODY} http://localhost:9090/assets/"
-echo ${CURL}
-${CURL}
+HTTP="http --verbose \
+           --json \
+           POST localhost:${PORT}/assets/ \
+           image_url=${IMAGE} \
+           source_id=${SOURCE_ID} \
+           asset_type=IMAGE \
+           asset_state=ACTIVE \
+           source=ADP \
+           references:={} \
+           attributes:={}"
+echo ${HTTP}
+${HTTP}
+echo "Asset with source id of ${SOURCE_ID} has been created." 
