@@ -49,7 +49,7 @@ while True:
         dst_message.set_body(msg_body)
         dst_queue.write(dst_message)
 # comment out the delete to simply copy messages
-#       src_queue.delete_message(src_message)
+        src_queue.delete_message(src_message)
     if len(messages) <= 0:
         break
 

@@ -3,7 +3,7 @@
 # expecs that an SSH tunnel to the private load balancer has already been started
 
 PORT=${1:-8080}
-IMAGE=${2:-https://www.sideshowtoy.com/assets/products/903341-iron-man-mark-iv/lg/marvel-iron-man-2-iron-man-mark-4-sixth-scale-figure-hot-toys-903340-01.jpg}
+IMAGE=${2:-https://picsum.photos/1024/768/?random}
 SOURCE_ID=$(date +%s)
 
 HTTP="http --verbose \
@@ -18,4 +18,5 @@ HTTP="http --verbose \
            attributes:={}"
 echo ${HTTP}
 ${HTTP}
-echo "Asset with source id of ${SOURCE_ID} has been created." 
+echo "Asset with source id of ${SOURCE_ID} has been created."
+
