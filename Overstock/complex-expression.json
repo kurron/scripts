@@ -1,0 +1,36 @@
+{
+   "comment": "((asset_state <> error) AND (source_id = 64647735)) OR ( (references.image_type = silo) AND (source_id = 64646345) )",
+   "expression_groups":[
+      {
+         "expressions":[
+            {
+               "field":"asset_state",
+               "value":"error",
+               "comparison_operator":"NEQ"
+            },
+            {
+               "logical_operator":"AND",
+               "field":"source_id",
+               "value":"64647735",
+               "comparison_operator":"EQ"
+            }
+         ]
+      },
+      {
+         "logical_operator": "OR",
+	 "expressions":[
+            {
+               "field":"references.image_type",
+               "value":"silo",
+               "comparison_operator":"EQ"
+            },
+            {
+               "logical_operator":"AND",
+               "field":"source_id",
+               "value":"64646345",
+               "comparison_operator":"EQ"
+            }
+         ]
+      }
+   ]
+}

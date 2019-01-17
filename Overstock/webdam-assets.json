@@ -1,0 +1,20 @@
+{
+   "comment": "(asset_state = active) AND (source = webdam)",
+   "expression_groups":[
+      {
+         "expressions":[
+            {
+               "field":"asset_state",
+               "value":"active",
+               "comparison_operator":"EQ"
+            },
+            {
+               "field":"source",
+               "value":"webdam",
+               "comparison_operator":"EQ",
+               "logical_operator":"AND"
+            }
+         ]
+      }
+   ]
+}

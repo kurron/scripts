@@ -1,0 +1,14 @@
+{
+   "comment": "asset_state = active",
+   "expression_groups":[
+      {
+         "expressions":[
+            {
+               "field":"asset_state",
+               "value":"active",
+               "comparison_operator":"EQ"
+            }
+         ]
+      }
+   ]
+}
