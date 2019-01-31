@@ -3,7 +3,8 @@
 # borrowed from https://gist.github.com/Vidimensional/3394c11f2d73b7c29e6cf9509a1d50e0
 # pip install --user boto cprint termcolor
 # make sure the queue's Default Visibility Timeout is large enough or you end up reading the same message multiple times
-# ./move-sqs.py -s adp-webdam-integration-dlq -d adp-webdam-integration --region us-east-1
+# make sure to have your API keys available in the environment
+# ./move-sqs.py --src adp-webdam-notifications-dlq-production --dst adp-webdam-notifications-production --region us-east-1
 
 import json
 import time
