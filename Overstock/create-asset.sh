@@ -2,7 +2,7 @@
 
 # expecs that an SSH tunnel to the private load balancer has already been started
 
-PORT=${1:-8080}
+PORT=${1:-9090}
 IMAGE=${2:-https://picsum.photos/1024/768/?random}
 SOURCE_ID=$(date +%s)
 
