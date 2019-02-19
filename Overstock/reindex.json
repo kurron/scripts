@@ -1,0 +1,9 @@
+{
+  "source": {
+    "index": "assets7"
+  },
+  "dest": {
+    "index": "assets8",
+    "op_type": "create"
+  }
+}
