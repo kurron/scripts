@@ -1,5 +1,6 @@
 {
     "actions" : [
-        { "add" : { "index" : "assets8", "alias" : "adp-data" } }
+        { "add" : { "index" : "assets7", "alias" : "adp-data" } },
+        { "add" : { "index" : "assets-metadata", "alias" : "adp-metadata" } }
     ]
 }
