@@ -34,4 +34,4 @@ awslocal sqs create-queue --queue-name adp-webdam-notifications-development
 awslocal sqs create-queue --queue-name asset-ingestion-development
 
 #docker pull amazon/dynamodb-local:latest
-#docker run --name dynamodb --hostname dynamodb --net host docker pull amazon/dynamodb-local:latest -inMemory -port 4569
+#docker run --name dynamodb --hostname dynamodb --net host amazon/dynamodb-local:latest -inMemory -port 4569
