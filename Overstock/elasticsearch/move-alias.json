@@ -1,6 +1,6 @@
 {
     "actions" : [
-        { "remove" : { "index" : "assets8", "alias" : "adp-data" } },
-        { "add" : { "index" : "assets7", "alias" : "adp-data" } }
+        { "remove" : { "index" : "ronbo-2", "alias" : "ronbo" } },
+        { "add" : { "index" : "ronbo3", "alias" : "ronbo" } }
     ]
 }

@@ -1,0 +1,20 @@
+{
+  "mappings": {
+    "asset": {
+      "dynamic": false,
+      "properties": {
+        "user": {
+          "properties": {
+            "id": {
+              "type": "text"
+            },
+            "references": {
+              "type": "object",
+              "dynamic": true
+            }
+          }
+        }
+      }
+    }
+  }
+}
