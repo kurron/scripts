@@ -1,0 +1,64 @@
+{
+  "mappings": {
+    "product": {
+      "dynamic": false,
+      "properties": {
+        "product": {
+          "properties": {
+            "product-id": {
+              "type": "text"
+            },
+            "sku-long": {
+              "type": "text"
+            },
+            "sku-short": {
+              "type": "text"
+            },
+            "option-id": {
+              "type": "text"
+            },
+            "subcategory-id": {
+              "type": "text"
+            },
+            "subcategory": {
+              "type": "text"
+            },
+            "department-id": {
+              "type": "text"
+            },
+            "department": {
+              "type": "text"
+            },
+            "store-id": {
+              "type": "text"
+            },
+            "store": {
+              "type": "text"
+            },
+            "category-id": {
+              "type": "text"
+            },
+            "category": {
+              "type": "text"
+            },
+            "color": {
+              "type": "text"
+            },
+            "style": {
+              "type": "text"
+            },
+            "image-url": {
+              "type": "text"
+            },
+            "product-url": {
+              "type": "text"
+            },
+            "variant-url": {
+              "type": "text"
+            }
+          }
+        }
+      }
+    }
+  }
+}

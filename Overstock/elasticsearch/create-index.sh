@@ -4,10 +4,10 @@
 
 PORT=${1:-9200}
 INDEX_NAME=${2:-ronbo3}
+DEFINITION=${3:-create-index.json}
 CMD="curl --request PUT \
 	  --header Content-Type:application/json \
-          --data @create-index.json  \
+          --data @${DEFINITION}  \
 	  http://localhost:${PORT}/${INDEX_NAME}"
 echo ${CMD}
 ${CMD}
-
