@@ -1,0 +1,26 @@
+{
+  "mappings": {
+    "asset": {
+      "dynamic": false,
+      "properties": {
+        "id": {
+          "type": "keyword"
+        },
+        "source": {
+          "type": "keyword"
+        },
+        "source-id": {
+          "type": "keyword"
+        },
+        "references": {
+          "type": "object",
+          "dynamic": true
+        },
+        "reference-counts": {
+          "type": "object",
+          "dynamic": true
+        }
+      }
+    }
+  }
+}
