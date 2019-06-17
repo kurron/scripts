@@ -1,6 +1,6 @@
 {
     "actions" : [
-        { "remove" : { "index" : "assets1", "alias" : "assets" } },
-        { "add" : { "index" : "assets2", "alias" : "assets" } }
+        { "remove" : { "index" : "assets2", "alias" : "assets" } },
+        { "add" : { "index" : "assets3", "alias" : "assets" } }
     ]
 }

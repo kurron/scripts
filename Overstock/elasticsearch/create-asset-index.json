@@ -12,6 +12,9 @@
         "source-id": {
           "type": "keyword"
         },
+        "asset-state": {
+          "type": "keyword"
+        },
         "references": {
           "type": "object",
           "dynamic": true

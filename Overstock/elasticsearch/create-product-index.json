@@ -47,14 +47,8 @@
             "style": {
               "type": "text"
             },
-            "image-url": {
-              "type": "text"
-            },
-            "product-url": {
-              "type": "text"
-            },
-            "variant-url": {
-              "type": "text"
+            "product-state": {
+              "type": "keyword"
             }
           }
         }
