@@ -32,49 +32,22 @@
       "dynamic": "false",
       "properties": {
         "id": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "normalizer": "lowercase_normalizer"
-            }
-          }
+          "type": "keyword"
         },
         "source": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "normalizer": "lowercase_normalizer"
-            }
-          }
+          "type": "keyword"
         },
         "source-id": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "normalizer": "lowercase_normalizer"
-            }
-          }
+          "type": "keyword"
         },
         "asset-type": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "normalizer": "lowercase_normalizer"
-            }
-          }
+          "type": "keyword"
         },
         "asset-state": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "normalizer": "lowercase_normalizer"
-            }
-          }
+          "type": "keyword"
+        },
+        "short-skus": {
+          "type": "keyword"
         },
         "references": {
           "type": "object",
