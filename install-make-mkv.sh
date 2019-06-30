@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION=1.14.3
+VERSION=1.14.4
 BINARY="http://www.makemkv.com/download/makemkv-bin-${VERSION}.tar.gz"
 SOURCE="http://www.makemkv.com/download/makemkv-oss-${VERSION}.tar.gz"
 
