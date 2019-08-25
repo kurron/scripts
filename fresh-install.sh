@@ -13,6 +13,7 @@ sudo apt install git || error_exit "Unable to install Git."
 sudo snap install code --classic || error_exit "Unable to install Visual Studio Code."
 sudo snap install chromium || error_exit "Unable to install Visual Studio Code."
 sudo snap install vlc || error_exit "Unable to install Visual Studio Code."
+sudo snap install snap-store || error_exit "Unable to install Visual Studio Code."
 
 sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib" >> /etc/apt/sources.list.d/virtualbox.list' || error_exit "Unable to add VirtualBox repository."
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add - || error_exit "Unable to install VirtualBox repository key."
