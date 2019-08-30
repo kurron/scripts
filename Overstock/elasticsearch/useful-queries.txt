@@ -1,0 +1,163 @@
+GET _search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+GET adp-assets/_search
+{
+  "sort": [
+    {
+      "modified_date": "desc"
+    }
+  ],
+  "query": {
+    "term": {
+      "source.keyword": {
+        "value": "adp_feed"
+      }
+    }
+  }
+}
+GET adp-assets/_search
+{
+  "sort": [
+    {
+      "modified_date": "desc"
+    }
+  ],
+  "query": {
+    "term": {
+      "source.keyword": {
+        "value": "webdam"
+      }
+    }
+  }
+}
+  
+  
+GET adp-assets/_search
+{
+  "sort": [
+    {
+      "modified_date": "desc"
+    }
+  ],
+  "query": {
+    "term": {
+      "references.source.keyword": {
+        "value": "sku_product_id_mapping.csv"
+      }
+    }
+  }
+}
+  
+GET adp-assets/_search
+{
+  "sort": [
+    {
+      "modified_date": "desc"
+    }
+  ],
+    "query": {
+        "exists": {
+            "field": "references.buyers_pick"
+        }
+    }
+}
+  
+GET adp-assets/_search
+{
+  "sort": [
+    {
+      "modified_date": "desc"
+    }
+  ],
+    "query": {
+        "exists": {
+            "field": "reference_rank_config"
+        }
+    }
+}
+  
+GET adp-assets/asset/620e3021ac6b56d1d7fc3f621dc5e468
+GET adp-assets/asset/7b0c8c1c2bb208983879aaf956731653
+GET adp-assets/asset/e42a5a53c0779e57fbbf03596e964eb6
+  
+ GET adp-products/_search
+{
+  "query": {
+    "bool": {
+      "must": {
+        "term": {
+          "product_id.keyword": "20498064"
+        }
+      },
+      "filter": {
+        "term": {
+          "source.keyword": "product_sort_rankings.csv"
+        }
+      }
+    }
+  }
+}
+GET adp-products/_search
+{
+  "sort": [
+    {
+      "event_modification_timestamp": "desc"
+    }
+  ],
+  "query": {
+    "term": {
+      "source.keyword": {
+        "value": "sku_product_id_mapping.csv"
+      }
+    }
+  }
+}
+GET adp-products/_search
+{
+  "sort": [
+    {
+      "event_modification_timestamp": "desc"
+    }
+  ],
+  "query": {
+    "term": {
+      "source.keyword": {
+        "value": "product_sort_rankings.csv"
+      }
+    }
+  }
+}
+GET adp-products/_search
+{
+  "sort": [
+    {
+      "event_modification_timestamp": "desc"
+    }
+  ],
+  "query": {
+    "term": {
+      "source.keyword": {
+        "value": "buyers_pick.csv"
+      }
+    }
+  }
+}
+GET adp-products/_search
+{
+  "sort": [
+    {
+      "event_modification_timestamp": "desc"
+    }
+  ],
+  "query": {
+    "term": {
+      "product_id.keyword": {
+        "value": "27367547"
+      }
+    }
+  }
+}
