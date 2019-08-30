@@ -161,3 +161,69 @@ GET adp-products/_search
     }
   }
 }
+
+POST adp-assets/_search
+{
+  "query": {
+    "bool": {
+      "must": {
+        "term": {
+          "source.keyword": "webdam"
+        }
+      },
+      "filter": {
+        "term": {
+          "asset_state.keyword": "active"
+        }
+      }
+    }
+  }
+}
+
+POST adp-assets/_search
+{
+  "query": {
+    "bool": {
+      "must": {
+        "term": {
+          "source.keyword": "webdam"
+        }
+      },
+      "filter": {
+        "term": {
+          "asset_state.keyword": "error"
+        }
+      }
+    }
+  }
+}
+
+POST adp-assets/_search
+{
+  "query": {
+    "bool": {
+      "must": {
+        "term": {
+          "source.keyword": "webdam"
+        }
+      },
+      "filter": {
+        "term": {
+          "asset_state.keyword": "pending"
+        }
+      }
+    }
+  }
+}
+
+GET adp-assets/_search
+{
+  "size": "0",
+  "aggs": {
+    "uniqe_state": {
+      "terms": {
+        "field": "asset_state.keyword"
+      }
+    }
+  }
+}
