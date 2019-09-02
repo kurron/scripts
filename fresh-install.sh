@@ -14,6 +14,11 @@ sudo snap install code --classic || error_exit "Unable to install Visual Studio 
 sudo snap install chromium || error_exit "Unable to install Visual Studio Code."
 sudo snap install vlc || error_exit "Unable to install Visual Studio Code."
 sudo snap install snap-store || error_exit "Unable to install Visual Studio Code."
+sudo snap install slack --classic || error_exit "Unable to install Slack."
+sudo snap install signal-desktop || error_exit "Unable to install Signal."
+sudo snap install ffmpeg || error_exit "Unable to install FFmpeg."
+sudo snap install htop || error_exit "Unable to install htop."
+sudo snap install plexmediaserver || error_exit "Unable to install Plex Media Server."
 
 sudo snap install clion --classic || error_exit "Unable to install CLion."
 sudo snap install datagrip --classic || error_exit "Unable to install DataGrip."
