@@ -10,6 +10,8 @@ error_exit()
 }
 
 sudo apt install git || error_exit "Unable to install Git."
+sudo apt install nfs-common || error_exit "Unable to install NFS client."
+
 sudo snap install code --classic || error_exit "Unable to install Visual Studio Code."
 sudo snap install chromium || error_exit "Unable to install Visual Studio Code."
 sudo snap install vlc || error_exit "Unable to install Visual Studio Code."
