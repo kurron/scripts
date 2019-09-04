@@ -83,8 +83,9 @@ GET adp-assets/_search
 GET adp-assets/asset/620e3021ac6b56d1d7fc3f621dc5e468
 GET adp-assets/asset/7b0c8c1c2bb208983879aaf956731653
 GET adp-assets/asset/e42a5a53c0779e57fbbf03596e964eb6
-  
- GET adp-products/_search
+DELETE adp-assets/asset/ac550a5b08e71e00a3ea5d45b2bb2cae
+
+GET adp-products/_search
 {
   "query": {
     "bool": {
