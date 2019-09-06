@@ -228,3 +228,14 @@ GET adp-assets/_search
     }
   }
 }
+
+POST adp-assets/_delete_by_query
+{
+  "query": {
+    "term": {
+      "source.keyword": {
+        "value": "ostk_supplier_db"
+      }
+    }
+  }
+}
