@@ -229,7 +229,7 @@ GET adp-assets/_search
   }
 }
 
-POST adp-assets/_delete_by_query
+POST adp-assets/_delete_by_query?conflicts=proceed
 {
   "query": {
     "term": {
