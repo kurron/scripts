@@ -7,18 +7,10 @@ error_exit()
 	  exit 1
 }
 
-USER_ID=$(id -u $(whoami))
-GROUP_ID=$(id -g $(whoami))
-
 echo Updating Base Image...
 docker pull localstack/localstack:latest || error_exit "Unable to pull Docker image."
 
 echo Launching localstack
-
-#export TMPDIR=/home/vagrant/Localstack
-#xport TMPDIR=/tmp
-#export DOCKER_FLAGS='-e ELASTICSEARCH_PORT="9200"'
-#localstack start --docker || error_exit "Unable to start localstack."
 
 COMMAND="docker run \
 		 --env-file localstack.ini \
