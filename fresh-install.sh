@@ -21,6 +21,7 @@ sudo snap install signal-desktop || error_exit "Unable to install Signal."
 sudo snap install ffmpeg || error_exit "Unable to install FFmpeg."
 sudo snap install htop || error_exit "Unable to install htop."
 sudo snap install plexmediaserver || error_exit "Unable to install Plex Media Server."
+sudo snap install youtube-dl || error_exit "Unable to install YouTube DL."
 
 sudo snap install clion --classic || error_exit "Unable to install CLion."
 sudo snap install datagrip --classic || error_exit "Unable to install DataGrip."
