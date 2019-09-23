@@ -2,9 +2,26 @@
 
 # expecs that an SSH tunnel to the private load balancer has already been started
 
-ID=${1:-4a248c4f5ddeaafec2dab927d9b7af8d}
-BODY=${2:-asset-update.json}
+ASSET_ID=$1
+SOURCE_ID=$2
+PORT=${3:-9090}
+IMAGE=https://picsum.photos/1024/768/?random
+CREATED_DATE=$(date +%s)
+INGESTION_DATE=$(date +%s)
 
-CURL="curl --verbose --header Content-Type:application/json --header Accept:application/json --request PUT --data @${BODY} http://localhost:9090/assets/update/${ID}"
-echo ${CURL}
-${CURL}
+HTTP="http --verbose \
+           --json \
+           PATCH localhost:${PORT}/assets/merge/${ASSET_ID} \
+           source_id=${SOURCE_ID} \
+           image_url=${IMAGE} \
+           created_date=${CREATED_DATE} \
+           ingestion_date=${INGESTION_DATE} \
+           asset_type=IMAGE \
+           asset_state=ACTIVE \
+           source=ADP \
+           references:={} \
+           attributes:={}"
+echo ${HTTP}
+${HTTP}
+echo "Asset ${ASSET_ID} has been modified via PATCH."
+
