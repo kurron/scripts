@@ -239,3 +239,21 @@ POST adp-assets/_delete_by_query?conflicts=proceed
     }
   }
 }
+
+GET adp-assets/asset/_search
+{
+  "query": {
+    "bool": {
+      "must": {
+        "term": {
+          "source_id.keyword": "2fc93f70"
+        }
+      },
+      "filter": {
+        "term": {
+          "source.keyword": "ADP"
+        }
+      }
+    }
+  }
+}
