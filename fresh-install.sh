@@ -11,6 +11,7 @@ error_exit()
 
 sudo apt install git || error_exit "Unable to install Git."
 sudo apt install nfs-common || error_exit "Unable to install NFS client."
+sudo apt install gnome-tweaks || error_exit "Unable to install Gnome Tweaks."
 
 sudo snap install code --classic || error_exit "Unable to install Visual Studio Code."
 sudo snap install chromium || error_exit "Unable to install Visual Studio Code."
@@ -38,6 +39,14 @@ sudo snap install youtube-dl || error_exit "Unable to install YouTube DL."
 #sudo snap install rider --classic || error_exit "Unable to install Rider."
 #sudo snap install rubymine --classic || error_exit "Unable to install RubyMine."
 #sudo snap install webstorm --classic || error_exit "Unable to install WebStorm."
+
+sudo add-apt-repository ppa:alexlarsson/flatpak
+sudo apt update && sudo apt install flatpak
+sudo apt install gnome-software-plugin-flatpak
+
+
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
+gsettings set org.gnome.shell.extensions.dash-to-dock show-trash true
 
 sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib" >> /etc/apt/sources.list.d/virtualbox.list' || error_exit "Unable to add VirtualBox repository."
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add - || error_exit "Unable to install VirtualBox repository key."
