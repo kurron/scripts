@@ -85,6 +85,14 @@ GET adp-assets/asset/7b0c8c1c2bb208983879aaf956731653
 GET adp-assets/asset/e42a5a53c0779e57fbbf03596e964eb6
 DELETE adp-assets/asset/ac550a5b08e71e00a3ea5d45b2bb2cae
 
+GET adp-assets/asset/_search
+{
+  "_source": [ "references.*", "reference_counts.*" ],
+  "query": {
+    "match_all": {}
+  }
+}
+
 GET adp-products/_search
 {
   "query": {
@@ -253,6 +261,17 @@ GET adp-assets/asset/_search
         "term": {
           "source.keyword": "ADP"
         }
+      }
+    }
+  }
+}
+
+POST adp-data/asset/_update_by_query?refresh&conflicts=proceed 
+{
+  "query": {
+    "term": {
+      "source.keyword": {
+        "value": "webdam"
       }
     }
   }
