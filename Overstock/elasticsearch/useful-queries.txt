@@ -87,10 +87,22 @@ DELETE adp-assets/asset/ac550a5b08e71e00a3ea5d45b2bb2cae
 
 GET adp-assets/asset/_search
 {
-  "_source": [ "references.*", "reference_counts.*" ],
+  "_source": [
+    "references.*",
+    "reference_counts.*",
+    "source",
+    "source_id",
+    "image_url",
+    "modified_date"
+  ],
   "query": {
     "match_all": {}
-  }
+  },
+  "sort": [
+    {
+      "modified_date": "desc"
+    }
+  ]
 }
 
 GET adp-products/_search
