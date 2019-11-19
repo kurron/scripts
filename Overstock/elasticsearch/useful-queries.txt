@@ -93,7 +93,9 @@ GET adp-assets/asset/_search
     "source",
     "source_id",
     "image_url",
-    "modified_date"
+    "modified_date",
+    "folder_id",
+    "folder_path"
   ],
   "query": {
     "match_all": {}
@@ -284,6 +286,40 @@ POST adp-data/asset/_update_by_query?refresh&conflicts=proceed
     "term": {
       "source.keyword": {
         "value": "webdam"
+      }
+    }
+  }
+}
+
+GET adp-assets-webdam/asset/_search
+{
+  "size": "0",
+  "aggs": {
+    "uniqe_state": {
+      "terms": {
+        "field": "references.folder_id.keyword"
+      }
+    }
+  }
+}
+
+GET adp-auditing/auditing-event/_search
+{
+  "_source": [
+    "asset-id",
+    "epoch-milliseconds",
+    "operation",
+    "username"
+  ],
+  "sort": [
+    {
+      "epoch-milliseconds": "desc"
+    }
+  ],
+  "query": {
+    "term": {
+      "asset-id.keyword": {
+        "value": "770293e916c8b7fb740ac51ece834e86"
       }
     }
   }
