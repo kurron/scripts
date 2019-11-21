@@ -324,3 +324,16 @@ GET adp-auditing/auditing-event/_search
     }
   }
 }
+
+# counts how many documents of each source we have
+GET adp-data/asset/_search
+{
+  "size": "0",
+  "aggs": {
+    "uniqe_state": {
+      "terms": {
+        "field": "source.keyword"
+      }
+    }
+  }
+}
