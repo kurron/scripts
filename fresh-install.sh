@@ -9,6 +9,7 @@ error_exit()
           exit 1
 }
 
+sudo apt install ssh || error_exit "Unable to install SSH."
 sudo apt install git || error_exit "Unable to install Git."
 sudo apt install nfs-common || error_exit "Unable to install NFS client."
 sudo apt install gnome-tweaks || error_exit "Unable to install Gnome Tweaks."
