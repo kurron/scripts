@@ -52,7 +52,7 @@ GET adp-assets/_search
   }
 }
   
-GET adp-assets/_search
+GET adp-assets/asset/_search
 {
   "sort": [
     {
@@ -66,6 +66,19 @@ GET adp-assets/_search
     }
 }
   
+GET adp-assets/asset/_search
+{
+    "query": {
+        "bool": {
+            "must_not": {
+                "exists": {
+                    "field": "image_detection_date"
+                }
+            }
+        }
+    }
+}
+
 GET adp-assets/_search
 {
   "sort": [
