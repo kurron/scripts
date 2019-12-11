@@ -1,0 +1,10 @@
+{
+  "size": "0",
+  "aggs": {
+    "uniqe_state": {
+      "terms": {
+        "field": "source.keyword"
+      }
+    }
+  }
+}
