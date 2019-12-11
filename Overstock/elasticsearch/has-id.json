@@ -1,0 +1,18 @@
+{
+  "_source": [
+    "source",
+    "source_id",
+    "modified_date",
+    "id"
+  ],
+  "sort": [
+    {
+      "modified_date": "desc"
+    }
+  ],
+  "query": {
+    "exists": {
+      "field": "id"
+    }
+  }
+}
