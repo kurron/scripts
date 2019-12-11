@@ -1,0 +1,24 @@
+{
+  "size": "0",
+  "_source": [
+    "source",
+    "source_id",
+    "modified_date",
+    "id"
+  ],
+  "sort": [
+    {
+      "modified_date": "desc"
+    }
+  ],
+     "query": {
+        "bool": {
+            "must_not": {
+                "exists": {
+                    "field": "id"
+                }
+            }
+        }
+    }
+  }
+}
