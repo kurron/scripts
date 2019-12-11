@@ -10,6 +10,7 @@ CMD="curl --silent \
 	  --request GET \
 	  --header Content-Type:application/json \
           --data @${DEFINITION}  \
-	  http://localhost:${PORT}/${INDEX}/asset/_search"
+	  http://localhost:${PORT}/${INDEX}/asset/_search?pretty=true"
 #echo ${CMD}
-${CMD} | python -m json.tool
+#${CMD} | python -m json.tool
+${CMD}
