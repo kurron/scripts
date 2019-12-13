@@ -12,4 +12,4 @@ wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key a
 
 sudo apt-get update
 
-sudo apt-get install virtualbox-5.2
+sudo apt-get install virtualbox-6.1
