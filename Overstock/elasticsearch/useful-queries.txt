@@ -350,3 +350,18 @@ GET adp-data/asset/_search
     }
   }
 }
+
+# a different, and possibly better way, to count documents of each type
+GET adp-data/asset/_search
+{
+  "size": "0",
+  "aggs": {
+    "image_type": {
+      "terms": {
+        "field": "references.image_type.keyword",
+        "size": 15
+      }
+    }
+  }
+}
+
