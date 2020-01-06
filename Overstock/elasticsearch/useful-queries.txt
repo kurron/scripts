@@ -365,3 +365,38 @@ GET adp-data/asset/_search
   }
 }
 
+# a compound query -- lots of nesting
+GET adp-assets/asset/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "asset_state.keyword": {
+              "query": "active",
+              "_name": "asset_state"
+            }
+          }
+        },
+        {
+          "match": {
+            "references.image_type.keyword": {
+              "query": "main",
+              "_name": "image_type"
+            }
+          }
+        },
+        {
+          "match": {
+            "source.keyword": {
+              "query": "webdam",
+              "_name": "source"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+
