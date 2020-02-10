@@ -24,6 +24,7 @@ sudo snap install ffmpeg || error_exit "Unable to install FFmpeg."
 sudo snap install htop || error_exit "Unable to install htop."
 sudo snap install plexmediaserver || error_exit "Unable to install Plex Media Server."
 sudo snap install youtube-dl || error_exit "Unable to install YouTube DL."
+sudo snap install obs-studio || error_exit "Unable to install OBS Studio."
 
 #sudo snap install clion --classic || error_exit "Unable to install CLion."
 #sudo snap install datagrip --classic || error_exit "Unable to install DataGrip."
@@ -45,11 +46,10 @@ sudo add-apt-repository ppa:alexlarsson/flatpak
 sudo apt update && sudo apt install flatpak
 sudo apt install gnome-software-plugin-flatpak
 
-
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 gsettings set org.gnome.shell.extensions.dash-to-dock show-trash true
 
-sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib" >> /etc/apt/sources.list.d/virtualbox.list' || error_exit "Unable to add VirtualBox repository."
+sudo sh -c 'echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib" >> /etc/apt/sources.list.d/virtualbox.list' || error_exit "Unable to add VirtualBox repository."
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add - || error_exit "Unable to install VirtualBox repository key."
 sudo apt-get update || error_exit "Unable to update repositories."
-sudo apt-get install virtualbox-6.0 || error_exit "Unable to install VirtualBox."
+sudo apt-get install virtualbox-6.1 || error_exit "Unable to install VirtualBox."
