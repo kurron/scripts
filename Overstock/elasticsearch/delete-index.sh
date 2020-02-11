@@ -6,6 +6,7 @@
 
 INDEX=${1:-assets7}
 PORT=${2:-9200}
-CMD="http DELETE http://localhost:${PORT}/${INDEX}"
+#CMD="http DELETE http://localhost:${PORT}/${INDEX}"
+CMD="curl --request DELETE http://localhost:${PORT}/${INDEX}"
 echo ${CMD}
 ${CMD}
