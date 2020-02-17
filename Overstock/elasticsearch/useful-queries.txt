@@ -400,3 +400,144 @@ GET adp-assets/asset/_search
   }
 }
 
+# multi-index test -------------------
+PUT multi-index-01
+{
+  "mappings": {
+    "vehicle": {
+      "dynamic": "false",
+      "properties": {
+        "color": {
+          "type": "text"
+        },
+        "make": {
+          "type": "text"
+        },
+        "model": {
+          "type": "text"
+        }
+      }
+    }
+  }
+}
+
+PUT multi-index-02
+{
+  "mappings": {
+    "vehicle": {
+      "dynamic": "false",
+      "properties": {
+        "color": {
+          "type": "text"
+        },
+        "make": {
+          "type": "text"
+        },
+        "model": {
+          "type": "text"
+        }
+      }
+    }
+  }
+}
+
+PUT multi-index-03
+{
+  "mappings": {
+    "vehicle": {
+      "dynamic": "false",
+      "properties": {
+        "color": {
+          "type": "text"
+        },
+        "make": {
+          "type": "text"
+        },
+        "model": {
+          "type": "text"
+        }
+      }
+    }
+  }
+}
+
+POST /_aliases
+{
+  "actions": [
+    {
+      "add": {
+        "index": "multi-index-01",
+        "alias": "multi-index"
+      }
+    },
+    {
+      "add": {
+        "index": "multi-index-02",
+        "alias": "multi-index"
+      }
+    },
+    {
+      "add": {
+        "index": "multi-index-03",
+        "alias": "multi-index"
+      }
+    }
+  ]
+}
+
+GET /_aliases
+
+GET multi-index/vehicle/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+GET multi-index/vehicle/1
+
+GET multi-index/vehicle/_search
+{
+  "query": {
+    "term": {
+      "color": {
+        "value": "orange"
+      }
+    }
+  }
+}
+
+PUT multi-index-01/vehicle/1
+{
+    "make" : "Honda",
+    "model" : "Accord",
+    "color" : "Blue"
+}
+
+PUT multi-index-02/vehicle/1
+{
+    "make" : "Nissan",
+    "model" : "Rogue Sport",
+    "color" : "Silver"
+}
+
+PUT multi-index-02/vehicle/2
+{
+    "make" : "Nissan",
+    "model" : "Rogue",
+    "color" : "Black"
+}
+
+PUT multi-index-03/vehicle/3
+{
+    "make" : "Ford",
+    "model" : "F-150",
+    "color" : "Orange"
+}
+
+PUT multi-index-01/vehicle/4
+{
+    "make" : "Honda",
+    "model" : "Accord",
+    "color" : "Orange"
+}
