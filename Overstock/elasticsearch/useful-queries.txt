@@ -541,3 +541,63 @@ PUT multi-index-01/vehicle/4
     "model" : "Accord",
     "color" : "Orange"
 }
+
+##### filtered alias testing ################
+GET /_aliases
+
+POST /_aliases
+{
+  "actions": [
+    {
+      "add": {
+        "index": "2020-01-24-assets-02",
+        "alias": "active-assets",
+        "filter": {
+          "term": {
+            "asset_state": "active"
+          }
+        }
+      }
+    }
+  ]
+}
+
+GET adp-assets/asset/_search
+{
+  "query": {
+    "term": {
+      "asset_state": {
+        "value": "active"
+      }
+    }
+  }
+}
+
+GET active-assets/asset/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+GET adp-assets/asset/_search
+{
+  "query": {
+    "term": {
+      "asset_state": {
+        "value": "error"
+      }
+    }
+  }
+}
+
+GET active-assets/asset/_search
+{
+  "query": {
+    "term": {
+      "asset_state": {
+        "value": "error"
+      }
+    }
+  }
+}
