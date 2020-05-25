@@ -7,7 +7,7 @@ error_exit()
           exit 1
 }
 
-VERSION=1.14.7
+VERSION=1.15.0
 BINARY="http://www.makemkv.com/download/makemkv-bin-${VERSION}.tar.gz"
 SOURCE="http://www.makemkv.com/download/makemkv-oss-${VERSION}.tar.gz"
 PACKAGES="sudo apt-get install build-essential pkg-config libc6-dev libssl-dev libexpat1-dev libavcodec-dev libgl1-mesa-dev libqt4-dev zlib1g-dev curl"
