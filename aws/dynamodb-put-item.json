@@ -1,0 +1,8 @@
+{
+    "id": {"S": "Alpha"},
+    "name": {"S": "Ronbo Alpha"},
+    "parent_id": {"S": "0"}, 
+    "old_id": {"S": "1234"}, 
+    "last_updated_by": {"S": "Ronbo"},
+    "last_updated_ts": {"N": "1566595062476"}  
+}
