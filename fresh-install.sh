@@ -17,12 +17,12 @@ sudo apt install gnome-tweaks || error_exit "Unable to install Gnome Tweaks."
 sudo snap install code --classic || error_exit "Unable to install Visual Studio Code."
 sudo snap install chromium || error_exit "Unable to install Visual Studio Code."
 sudo snap install vlc || error_exit "Unable to install Visual Studio Code."
-sudo snap install snap-store || error_exit "Unable to install Visual Studio Code."
+#sudo snap install snap-store || error_exit "Unable to install Visual Studio Code."
 sudo snap install slack --classic || error_exit "Unable to install Slack."
 sudo snap install signal-desktop || error_exit "Unable to install Signal."
 sudo snap install ffmpeg || error_exit "Unable to install FFmpeg."
 sudo snap install htop || error_exit "Unable to install htop."
-sudo snap install plexmediaserver || error_exit "Unable to install Plex Media Server."
+#sudo snap install plexmediaserver || error_exit "Unable to install Plex Media Server."
 sudo snap install youtube-dl || error_exit "Unable to install YouTube DL."
 sudo snap install obs-studio || error_exit "Unable to install OBS Studio."
 
@@ -42,9 +42,9 @@ sudo snap install obs-studio || error_exit "Unable to install OBS Studio."
 #sudo snap install rubymine --classic || error_exit "Unable to install RubyMine."
 #sudo snap install webstorm --classic || error_exit "Unable to install WebStorm."
 
-sudo add-apt-repository ppa:alexlarsson/flatpak
-sudo apt update && sudo apt install flatpak
-sudo apt install gnome-software-plugin-flatpak
+#sudo add-apt-repository ppa:alexlarsson/flatpak
+#sudo apt update && sudo apt install flatpak
+#sudo apt install gnome-software-plugin-flatpak
 
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 gsettings set org.gnome.shell.extensions.dash-to-dock show-trash true
