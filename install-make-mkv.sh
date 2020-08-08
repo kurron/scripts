@@ -7,10 +7,11 @@ error_exit()
           exit 1
 }
 
-VERSION=1.15.1
+VERSION=1.15.2
 BINARY="http://www.makemkv.com/download/makemkv-bin-${VERSION}.tar.gz"
 SOURCE="http://www.makemkv.com/download/makemkv-oss-${VERSION}.tar.gz"
-PACKAGES="sudo apt-get install build-essential pkg-config libc6-dev libssl-dev libexpat1-dev libavcodec-dev libgl1-mesa-dev libqt4-dev zlib1g-dev curl"
+#PACKAGES="sudo apt-get install build-essential pkg-config libc6-dev libssl-dev libexpat1-dev libavcodec-dev libgl1-mesa-dev libqt4-dev zlib1g-dev curl"
+PACKAGES="sudo apt-get install build-essential pkg-config libc6-dev libssl-dev libexpat1-dev libavcodec-dev libgl1-mesa-dev qtbase5-dev zlib1g-dev curl"
 
 echo ${PACKAGES}
 ${PACKAGES} || error_exit "Unable to install required packages."
