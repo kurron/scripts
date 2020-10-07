@@ -1,0 +1,9 @@
+# ideas stolen from https://merikan.com/2019/04/jvm-in-a-container/
+
+docker run --memory 1GB adoptopenjdk:11-jre-hotspot-bionic java -XX:+PrintFlagsFinal -version | grep -E "UseContainerSupport | InitialRAMPercentage | MaxRAMPercentage | MinRAMPercentage"
+
+docker run --memory 1GB adoptopenjdk:11-jre-hotspot-bionic java -XshowSettings:vm -version
+
+docker run --memory 1GB adoptopenjdk:11-jre-hotspot-bionic java -XX:InitialRAMPercentage=75 -XX:MaxRAMPercentage=90 -XshowSettings:vm -version
+
+docker run --memory 1GB adoptopenjdk:11-jre-hotspot-bionic java -XX:InitialRAMPercentage=75 -XX:MaxRAMPercentage=90 -XX:+PrintFlagsFinal -version | grep -E "UseContainerSupport | InitialRAMPercentage | MaxRAMPercentage | MinRAMPercentage"
