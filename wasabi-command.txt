@@ -1,0 +1,1 @@
+aws --profile wasabi --endpoint-url=https://s3.wasabisys.com s3 ls
