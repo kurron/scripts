@@ -9,5 +9,5 @@ fi
 COMMENT=$1
 
 mkdir .ssh
-ssh-keygen -C "$COMMENT" -t rsa -f .ssh/id_rsa
+ssh-keygen -C "$COMMENT" -t rsa -f $HOME/.ssh/id_rsa
 chmod 0700 .ssh
