@@ -7,7 +7,7 @@ error_exit()
           exit 1
 }
 
-VERSION=1.17.5
+VERSION=1.17.6
 BINARY="https://www.makemkv.com/download/makemkv-bin-${VERSION}.tar.gz"
 SOURCE="https://www.makemkv.com/download/makemkv-oss-${VERSION}.tar.gz"
 FFMPEG="https://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2"
